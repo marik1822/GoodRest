@@ -7,6 +7,83 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="754.087" Width="1514.85">
+    <Window.Resources>
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox}" x:Key="TextBox1">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        Background="{TemplateBinding Background}" 
+                                        SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+
+                            <Border x:Name="border" CornerRadius="20" BorderBrush="Black" >
+                                <Border.Background>
+
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF5E70AE" Offset="1"/>
+                                        <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                                        <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="фон2.jpg"/>
     </Window.Background>
@@ -14,12 +91,45 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="459" Margin="426,128,0,0"  VerticalAlignment="Top" Width="703" Background="#BFF5F2F2">
-            <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="133,122,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FF3E3E40"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="388" Margin="426,199,0,0"  VerticalAlignment="Top" Width="712" Background="#BFF1F2F5">
+            <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="119,120,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
         </Border>
-        <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="621,142,0,0" VerticalAlignment="Top" Width="386" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="42" Margin="940,521,0,0" VerticalAlignment="Top" Width="133"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="633,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+        <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="631,208,0,0" VerticalAlignment="Top" Width="409" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <CheckBox Content="Я не робот" HorizontalAlignment="Left" Height="24" Margin="922,527,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="604,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" TextChanged="TextBox_TextChanged"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="561,331,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="426,194,0,0" VerticalAlignment="Top" Width="703"/>
+        <Button Style="{DynamicResource RoundCorner}" Content="ВХОД" HorizontalAlignment="Left" Margin="775,511,0,0" VerticalAlignment="Top" Width="114" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click"  >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{DynamicResource RoundCorner}" Content="РЕГИСТРАЦИЯ" HorizontalAlignment="Left" Margin="489,511,0,0" VerticalAlignment="Top" Width="125" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF133939" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="549,393,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
+        <TextBox Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="604,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="561,402,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
+     
+
 
     </Grid>
+
 </Window>
+    
