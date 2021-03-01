@@ -1,0 +1,25 @@
+﻿<Window x:Class="GoodRest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodRest"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="754.087" Width="1514.85">
+    <Window.Background>
+        <ImageBrush ImageSource="фон2.jpg"/>
+    </Window.Background>
+    <Grid Opacity="0.985">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="459" Margin="426,128,0,0"  VerticalAlignment="Top" Width="703" Background="#BFF5F2F2">
+            <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="133,122,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FF3E3E40"/>
+        </Border>
+        <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="621,142,0,0" VerticalAlignment="Top" Width="386" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="42" Margin="940,521,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="633,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+
+    </Grid>
+</Window>

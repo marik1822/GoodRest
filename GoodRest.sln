@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodRest", "GoodRest\GoodRest.csproj", "{58A7B072-DCB6-435B-B635-F8F7D7426507}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58A7B072-DCB6-435B-B635-F8F7D7426507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A7B072-DCB6-435B-B635-F8F7D7426507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A7B072-DCB6-435B-B635-F8F7D7426507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A7B072-DCB6-435B-B635-F8F7D7426507}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71C3F830-6E4D-4241-91D8-952E3CE4BD50}
+	EndGlobalSection
+EndGlobal
