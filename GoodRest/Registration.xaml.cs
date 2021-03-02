@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GoodRest
@@ -17,11 +18,16 @@ namespace GoodRest
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : Window
+    public partial class Registration : Page
     {
         public Registration()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click40(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -6,8 +6,25 @@
         xmlns:local="clr-namespace:GoodRest"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        AllowsTransparency="True" 
         Title="MainWindow" Height="754.087" Width="1514.85">
     <Window.Resources>
+        <Style x:Key="testBtn" TargetType="Button">
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.25"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Opacity" Value="0.0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox}" x:Key="TextBox1">
             <Setter Property="Template">
                 <Setter.Value>
@@ -85,21 +102,32 @@
         </Style>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="фон2.jpg"/>
+        <ImageBrush ImageSource="скидки.jpg"/>
     </Window.Background>
-    <Grid Opacity="0.985">
+    <Grid Opacity="0.985" Margin="0,0,-0.2,-0.2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="1393*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="388" Margin="426,199,0,0"  VerticalAlignment="Top" Width="712" Background="#BFF1F2F5">
+        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="388" Margin="275.387,195,0,0"  VerticalAlignment="Top" Width="712" Background="#BFF1F2F5" Grid.Row="1" Grid.Column="2">
             <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="119,120,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
         </Border>
-        <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="631,208,0,0" VerticalAlignment="Top" Width="409" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <CheckBox Content="Я не робот" HorizontalAlignment="Left" Height="24" Margin="922,527,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="604,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" TextChanged="TextBox_TextChanged"/>
-        <Image HorizontalAlignment="Left" Height="22" Margin="561,331,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="426,194,0,0" VerticalAlignment="Top" Width="703"/>
-        <Button Style="{DynamicResource RoundCorner}" Content="ВХОД" HorizontalAlignment="Left" Margin="775,511,0,0" VerticalAlignment="Top" Width="114" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click"  >
+        <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="480.387,204,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558" Grid.Row="1" Grid.Column="2"/>
+        <CheckBox  Content="" HorizontalAlignment="Left" Height="23" Margin="779.387,526,0,0" VerticalAlignment="Top" Width="36" Foreground="#FF96969F" RenderTransformOrigin="0.389,0.523" Grid.Row="1" Grid.Column="2"/>
+        <TextBox  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="453.387,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" TextChanged="TextBox_TextChanged" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="410.387,327,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5" Grid.Row="1" Grid.Column="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="275.387,190,0,0" VerticalAlignment="Top" Width="703" Grid.Row="1" Grid.Column="2"/>
+        <Button Style="{DynamicResource RoundCorner}"  Content="ВХОД" HorizontalAlignment="Left" Margin="624.387,507,0,0" VerticalAlignment="Top" Width="114" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click" Grid.Row="1" Grid.Column="2" Cursor="Hand"  >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -111,7 +139,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Style="{DynamicResource RoundCorner}" Content="РЕГИСТРАЦИЯ" HorizontalAlignment="Left" Margin="489,511,0,0" VerticalAlignment="Top" Width="125" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" >
+        <Button Style="{DynamicResource RoundCorner}" Command="{Binding  Button_Click_1}"   Content="РЕГИСТРАЦИЯ"  HorizontalAlignment="Left" Margin="338.387,507,0,0" VerticalAlignment="Top" Width="125" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Grid.Row="1" Grid.Column="2" Cursor="Hand" >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -123,11 +151,30 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="549,393,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
-        <TextBox Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="604,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин"/>
-        <Image HorizontalAlignment="Left" Height="22" Margin="561,402,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
-     
-
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="398.387,389,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1" Grid.Row="1" Grid.Column="2"/>
+        <TextBox Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="22" Margin="453.387,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="410.387,398,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG" Grid.Row="1" Grid.Column="2"/>
+        <Label Content="Я не робот" HorizontalAlignment="Left" Margin="798.387,517,0,0" VerticalAlignment="Top" Foreground="#FF8C8C8C" FontSize="16" Height="32" Width="90" Grid.Row="1" Grid.Column="2"/>
+        <Frame Content="{Binding  Path=CurrentPage}" Grid.ColumnSpan="4" Grid.Column="1"  Margin="0,0,-0.2,-0.2" Grid.RowSpan="2" NavigationUIVisibility="Hidden" Opacity="{Binding FrameOpacity}" Navigated="Frame_Navigated" />
+        <Image Name="Exit" Grid.Column="2" ToolTip="Выход"  HorizontalAlignment="Left" Height="43" Margin="945.2,194,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="40" Source="крест.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="47.7"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Exit}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
 
     </Grid>
 
