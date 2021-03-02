@@ -19,6 +19,8 @@ using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Drawing;
+using System.Windows.Media.Animation;
+
 
 
 namespace GoodRest
@@ -29,6 +31,7 @@ namespace GoodRest
     public partial class MainWindow : Window
     {
         private Page Registration;
+        private Greeting_GoodRest _greeting_GoodRest;
 
         private Page _currentPage;
         public Page CurrentPage { get { return _currentPage; } set { _currentPage = value;   }  }
@@ -38,7 +41,7 @@ namespace GoodRest
         public MainWindow()
         {
             InitializeComponent();
-            Registration = new Registration();
+           // MainFrame.Content = new Greeting_GoodRest();
             FrameOpacity = 1;
             CurrentPage = null;
         }
@@ -51,17 +54,18 @@ namespace GoodRest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            new Greeting().Show();
+            this.Close();
         }
 
-        
-        public ICommand Button_Click_1
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            get
-            {
-                return new RelayCommand(() => SlowOpacity(Registration));
-            }
+            
+            new Registration().Show();
+            this.Close();
         }
+       
     private async void SlowOpacity(Page page)
         { 
            await Task.Factory.StartNew(()=>

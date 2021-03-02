@@ -70,9 +70,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Greeting.xaml.cs">
+      <DependentUpon>Greeting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Greeting_GoodRest.xaml.cs">
+      <DependentUpon>Greeting_GoodRest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Page Include="Greeting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Greeting_GoodRest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -168,6 +182,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="крест.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="фон для облаков2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cloud-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cloud-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cloud-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cloud-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="логотип тур 2 100x108.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="логотип.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="почта.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Звуки природы Star — Музыкотерапия.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
