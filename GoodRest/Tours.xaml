@@ -1,0 +1,72 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodRest"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="GoodRest.Tours"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Icon="логотип.png"
+        Title="GoodRest" Height="754.087" Width="1514.85" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="фон для туров.png"/>
+    </Window.Background>
+    <Grid>
+
+        <Menu Height="51" VerticalAlignment="Top" Margin="240,80,229.8,0" Background="#B2F0F0F0">
+            <MenuItem Header="       ГЛАВНАЯ" Foreground="#FF2D4F60" Height="53" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand"/>
+            <MenuItem Header="  О КОМПАНИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+            <MenuItem Header="        АКЦИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+            <MenuItem Header="         ТУРЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" >
+                <MenuItem Header="Туры по странам" >
+                    <MenuItem Header="ОАЭ"/>
+                    <MenuItem Header="Россия" />
+                    <MenuItem Header="Турция"/>
+                    <MenuItem Header="Египет" />
+                </MenuItem>
+                <MenuItem Header="Поиск тура" />
+                <Separator />
+                <MenuItem Header="Все туры" />
+            </MenuItem>
+            <MenuItem Header="     КОНТАКТЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+            <MenuItem Height="38" Width="215" Foreground="#FF2D4F5B" Cursor="Hand" >
+                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" />
+                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Калининград" />
+                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Санкт-Петербург" />
+            </MenuItem>
+        </Menu>
+        <Image HorizontalAlignment="Left" x:Name="Exit" ToolTip="Выход" Height="29" Margin="1240,90,0,0" VerticalAlignment="Top" Width="30" Source="выключение.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Exit}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Image HorizontalAlignment="Left" x:Name="Back" ToolTip="Назад" Height="24" Margin="1203,92,0,0" VerticalAlignment="Top" Width="24" Source="назад стрелка.png" Cursor="Hand" MouseLeftButtonDown="Back_MouseLeftButtonDown">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Back}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Frame Name="ToursFrame" HorizontalAlignment="Left" Height="587" Margin="240,151,0,0" VerticalAlignment="Top" Width="1065"/>
+        <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="24" Margin="1014,92,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
+        <Label Content="Санкт-Петербург" HorizontalAlignment="Left" Height="27" Margin="1084,92,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
+    </Grid>
+</Window>

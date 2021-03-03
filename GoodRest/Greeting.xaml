@@ -8,7 +8,8 @@
         WindowState="Maximized"
         WindowStyle="None"
         Icon="логотип.png"
-        Title="GoodRest" Height="754.087" Width="1514.85" Foreground="{x:Null}">
+       x:Name="Greeting1"
+        Title="GoodRest" Height="754.087" Width="1514.85" Foreground="{x:Null}" Activated="Window_Activated" Unloaded="Greeting1_Unloaded">
     <Window.Background>
         <ImageBrush ImageSource="фон для облаков2.jpg"/>
     </Window.Background>
@@ -78,7 +79,7 @@
         </Image>
         <Image Name="Cloud3" HorizontalAlignment="Left" Height="447" Margin="59,436,0,-128.913" VerticalAlignment="Top" Width="966" Source="cloud-03.png" Loaded="Cloud3_Loaded"/>
         <Image Name="Cloud4" HorizontalAlignment="Left" Height="517" Margin="27,-46,0,0" VerticalAlignment="Top" Width="882" Source="cloud-04.png" Loaded="Cloud4_Loaded"/>
-        <Button Style="{DynamicResource RoundCorner}"  Content="ПРОДОЛЖИТЬ" HorizontalAlignment="Left" Margin="356,471,0,0" VerticalAlignment="Top" Width="740" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45"  Cursor="Hand"  >
+       <Button Name="Next" Style="{DynamicResource RoundCorner}"  Content="ПРОДОЛЖИТЬ" HorizontalAlignment="Left" Margin="356,471,0,0" VerticalAlignment="Top" Width="740" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45"  Cursor="Hand" Click="Next_Click"   >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -90,7 +91,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Добро пожаловать в турагентство" HorizontalAlignment="Left" Height="58" Margin="384,285,0,0" VerticalAlignment="Top" Width="744" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.448,0.809"/>
+        <!--<Label Content="Добро пожаловать в турагентство" HorizontalAlignment="Left" Height="58" Margin="384,285,0,0" VerticalAlignment="Top" Width="744" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.448,0.809"/>
         <Label Content="GOOD REST" HorizontalAlignment="Left" Height="58" Margin="607,348,0,0" VerticalAlignment="Top" Width="241" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.448,0.809"/>
         <Image Name="Exit" ToolTip="Выход"  HorizontalAlignment="Left" Height="43" Margin="1050,215,0,0" VerticalAlignment="Top" Width="40" Source="крест.png" RenderTransformOrigin="2.594,-0.779" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown">
             <Image.Effect>
@@ -113,6 +114,8 @@
                     </Style.Triggers>
                 </Style>
             </Image.Style>
-        </Image>
+        </Image>-->
+        
+        <Frame Name="MainFraime" HorizontalAlignment="Left" Height="304" Margin="356,212,0,0" VerticalAlignment="Top" Width="740"/>
     </Grid>
 </Window>

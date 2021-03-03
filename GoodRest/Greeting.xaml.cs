@@ -110,9 +110,39 @@ namespace GoodRest
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            Next.IsEnabled = true;
+            MainFraime.Content = new GreetingPage();
             _mpBgr.Open(new Uri(@"C:/Users/orvis/source/repos/GoodRest/GoodRest/Звуки природы Star — Музыкотерапия.mp3", UriKind.Absolute));
             _mpBgr.Play();
             _mpBgr.Position = TimeSpan.FromMinutes(0.10);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainFraime.Content = new ChoiceActionsClients();
+            
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            Next.IsEnabled = false;
+            Next.Opacity = 0.0;
+            MainFraime.Content = null;
+            MainFraime.Content = new ChoiceActionsClients();
+        }
+        public void Close_window() 
+        {
+            this.Close();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Greeting1_Unloaded(object sender, RoutedEventArgs e)
+        {
+            _mpBgr.Pause();
         }
     }
 }

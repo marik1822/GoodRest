@@ -13,6 +13,7 @@
         Title="GoodRest" Height="754.087" Width="1514.85">
 
     <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="testBtn" TargetType="Button">
             <Style.Triggers>
 
@@ -126,7 +127,6 @@
         </Border>
         <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="481.2,204,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558" Grid.Row="1" Grid.Column="2"/>
         <CheckBox  Content="" HorizontalAlignment="Left" Height="23" Margin="780.2,526,0,0" VerticalAlignment="Top" Width="36" Foreground="#FF96969F" RenderTransformOrigin="0.389,0.523" Grid.Row="1" Grid.Column="2"/>
-        <TextBox  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" TextChanged="TextBox_TextChanged" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="411.2,327,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5" Grid.Row="1" Grid.Column="2"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="276.2,190,0,0" VerticalAlignment="Top" Width="703" Grid.Row="1" Grid.Column="2"/>
         <Button Style="{DynamicResource RoundCorner}"  Content="ВХОД" HorizontalAlignment="Left" Margin="625.2,507,0,0" VerticalAlignment="Top" Width="114" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click" Grid.Row="1" Grid.Column="2" Cursor="Hand"  >
@@ -154,7 +154,8 @@
             </Button.Background>
         </Button>
         <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="399.2,389,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1" Grid.Row="1" Grid.Column="2"/>
-        <TextBox Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock  Grid.Column="2" HorizontalAlignment="Left" Margin="440.2,399,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="59" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Password}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBox Name="Password" Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" AutomationProperties.HelpText="логин" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="411.2,398,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG" Grid.Row="1" Grid.Column="2"/>
         <Label Content="Я не робот" HorizontalAlignment="Left" Margin="799.2,517,0,0" VerticalAlignment="Top" Foreground="#FF8C8C8C" FontSize="16" Height="32" Width="90" Grid.Row="1" Grid.Column="2"/>
 
@@ -180,6 +181,9 @@
                 </Style>
             </Image.Style>
         </Image>
+        <TextBlock  Grid.Column="2" HorizontalAlignment="Left" Margin="443.2,327,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="59" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=txtUserEntry}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+
+        <TextBox Name="txtUserEntry"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"  TextChanged="TextBox_TextChanged" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"  MouseLeftButtonDown="TextBox_MouseLeftButtonDown" TextInput="TextBox_TextInput"/>
 
 
     </Grid>

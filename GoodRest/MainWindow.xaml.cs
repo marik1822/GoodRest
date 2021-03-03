@@ -104,5 +104,16 @@ namespace GoodRest
         {
 
         }
+
+        private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void TextBox_TextInput(object sender, TextCompositionEventArgs e)
+        {
+           
+
+        }
     }
 }

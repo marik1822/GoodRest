@@ -10,6 +10,7 @@
         Icon="логотип.png"
         Title="GoodRest" Height="754.4" Width="1515.2">
     <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -142,12 +143,16 @@
         <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,395,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="562,404,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
         <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,329,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="596,338,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login1}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
         <TextBox Name="Login1"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="568,338,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5"/>
-        <TextBox x:Name="Login1_Copy"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <TextBox x:Name="Login1_Copy1"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="591,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <TextBlock HorizontalAlignment="Left" Margin="596,406,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login1_Copy}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="596,270,0,0" TextWrapping="Wrap" Text="Электронная почта" VerticalAlignment="Top" Width="148" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login1_Copy1}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
         <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,462,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="562,470,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
+        <TextBlock HorizontalAlignment="Left" Margin="596,474,0,0" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top" Width="132" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login1_Copy2}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
         <TextBox x:Name="Login1_Copy2"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <TextBox x:Name="Login1_Copy"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <TextBox x:Name="Login1_Copy1"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="591,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
     </Grid>
 </Window>
