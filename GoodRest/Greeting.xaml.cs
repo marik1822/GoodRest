@@ -26,6 +26,7 @@ namespace GoodRest
         {
             InitializeComponent();
             _mpBgr = new MediaPlayer();
+            
         }
 
        
@@ -143,6 +144,12 @@ namespace GoodRest
         private void Greeting1_Unloaded(object sender, RoutedEventArgs e)
         {
             _mpBgr.Pause();
+        }
+
+        private void Greeting1_Loaded(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Close();
+
         }
     }
 }

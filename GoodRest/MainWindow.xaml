@@ -181,9 +181,10 @@
                 </Style>
             </Image.Style>
         </Image>
-        <TextBlock  Grid.Column="2" HorizontalAlignment="Left" Margin="443.2,327,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="59" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=txtUserEntry}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBlock  Grid.Column="2" HorizontalAlignment="Left" Margin="443.2,327,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="59" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
 
-        <TextBox Name="txtUserEntry"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"  TextChanged="TextBox_TextChanged" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"  MouseLeftButtonDown="TextBox_MouseLeftButtonDown" TextInput="TextBox_TextInput"/>
+        <TextBox Name="Login"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="440.2,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="388"  Background="Transparent" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"  TextChanged="TextBox_TextChanged" Foreground="#FF30515D" Grid.Row="1" Grid.Column="2"  MouseLeftButtonDown="TextBox_MouseLeftButtonDown" TextInput="TextBox_TextInput"/>
+        <TextBlock x:Name="Error" HorizontalAlignment="Left" Height="28" Margin="411.2,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="449" Foreground="#FFE81919" FontFamily="Microsoft YaHei UI" Grid.Column="2" Grid.RowSpan="2"/>
 
 
     </Grid>

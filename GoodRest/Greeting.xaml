@@ -9,7 +9,7 @@
         WindowStyle="None"
         Icon="логотип.png"
        x:Name="Greeting1"
-        Title="GoodRest" Height="754.087" Width="1514.85" Foreground="{x:Null}" Activated="Window_Activated" Unloaded="Greeting1_Unloaded">
+        Title="GoodRest" Height="754.087" Width="1514.85" Foreground="{x:Null}" Activated="Window_Activated" Unloaded="Greeting1_Unloaded" Loaded="Greeting1_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="фон для облаков2.jpg"/>
     </Window.Background>
