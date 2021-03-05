@@ -18,7 +18,7 @@
         <Menu Height="51" VerticalAlignment="Top" Margin="240,80,229.8,0" Background="#B2F0F0F0">
             <MenuItem Header="       ГЛАВНАЯ" Foreground="#FF2D4F60" Height="53" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand"/>
             <MenuItem Header="  О КОМПАНИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
-            <MenuItem Header="        АКЦИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+
             <MenuItem Header="         ТУРЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" >
                 <MenuItem Header="Туры по странам" >
                     <MenuItem Header="ОАЭ"/>
@@ -31,7 +31,7 @@
                 <MenuItem Header="Все туры" />
             </MenuItem>
             <MenuItem Header="     КОНТАКТЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
-            <MenuItem Height="38" Width="215" Foreground="#FF2D4F5B" Cursor="Hand" >
+            <MenuItem Height="38" Width="185" Foreground="#FF2D4F5B" Cursor="Hand" >
                 <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" />
                 <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Калининград" />
                 <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Санкт-Петербург" />
@@ -66,7 +66,22 @@
             </Image.Style>
         </Image>
         <Frame Name="ToursFrame" HorizontalAlignment="Left" Height="587" Margin="240,151,0,0" VerticalAlignment="Top" Width="1065"/>
-        <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="24" Margin="1014,92,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
-        <Label Content="Санкт-Петербург" HorizontalAlignment="Left" Height="27" Margin="1084,92,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
+        <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="24" Margin="845,94,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
+        <Label Content="Санкт-Петербург" HorizontalAlignment="Left" Height="28" Margin="915,94,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
+        <Image Name="LogOut" HorizontalAlignment="Left" ToolTip="Выход из аккаунта" Height="30" Margin="1162,89,0,0" VerticalAlignment="Top" Width="36" Source="назад.png" Cursor="Hand" MouseLeftButtonDown="LogOut_MouseLeftButtonDown">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=LogOut}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="1028,99,0,0" TextWrapping="Wrap" Text="тут должен быть логин" VerticalAlignment="Top" Width="129" Height="19" Foreground="#FF2D4F5B"/>
     </Grid>
 </Window>

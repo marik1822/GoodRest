@@ -1,4 +1,4 @@
-﻿<Page x:Class="GoodRest.ChoiceActionsClients"
+﻿<Page x:Class="GoodRest.SearchApplications"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,10 +6,9 @@
       xmlns:local="clr-namespace:GoodRest"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ChoiceActions"
-      
-      Width="740" Height="304" Loaded="Page_Loaded">
+      Title="SearchApplications" Width="740" Height="290">
     <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -64,54 +63,60 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox}" x:Key="TextBox1">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        Background="{TemplateBinding Background}" 
+                                        SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+       
     </Page.Resources>
     <Grid>
-        
-        <Image Name="Exit" ToolTip="Выход"  HorizontalAlignment="Left" Height="43" Margin="702,-4,-2,0" VerticalAlignment="Top" Width="40" Source="крест.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand" MouseLeftButtonDown="Exit_MouseLeftButtonDown">
+        <Button Style="{DynamicResource RoundCorner}"  Content="Вывести все мои заявки" HorizontalAlignment="Left" Margin="280,179,0,0" VerticalAlignment="Top" Width="196" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Cursor="Hand" Click="Button_Click"  >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="147,58,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,68,0,0" TextWrapping="Wrap" Text="Введите код заявки" VerticalAlignment="Top" Width="161" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=NumberApplications}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBox Name="NumberApplications"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="194,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <Image HorizontalAlignment="Left" Height="20" Margin="159,68,0,0" VerticalAlignment="Top" Width="19" Source="icons8-отследить-отправление-через-мобильный-24.png"/>
+        <Image Name="Search1" HorizontalAlignment="Left" ToolTip="Поиск" Height="33" Margin="638,62,0,0" VerticalAlignment="Top" Width="41" Source="поиск.png" Cursor="Hand" MouseLeftButtonDown="Search1_MouseLeftButtonDown">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="47.7"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Exit}" Value="True">
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Search1}" Value="True">
                             <Setter Property="Opacity" Value="0.5"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Image.Style>
         </Image>
-        <Button Style="{DynamicResource RoundCorner}"   Content="Посмотреть статус заявки"  HorizontalAlignment="Left" Margin="195,64,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand" Click="Button_Click_1"  >
-            <Button.Effect>
-                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
-            </Button.Effect>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5E70AE" Offset="1"/>
-                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
-                    <GradientStop Color="#FF133939" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource RoundCorner}"   Content="Поиск Туров"  HorizontalAlignment="Left" Margin="195,169,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand" Click="Button_Click"  >
-            <Button.Effect>
-                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
-            </Button.Effect>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5E70AE" Offset="1"/>
-                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
-                    <GradientStop Color="#FF133939" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Frame Name="FrameSearch1"  HorizontalAlignment="Left" Height="290" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="740"/>
     </Grid>
 </Page>

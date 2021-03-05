@@ -95,6 +95,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationOutput1.xaml.cs">
+      <DependentUpon>ApplicationOutput1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications.xaml.cs">
+      <DependentUpon>Applications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChoiceActionsAdmin.xaml.cs">
       <DependentUpon>ChoiceActionsAdmin.xaml</DependentUpon>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchApplications.xaml.cs">
+      <DependentUpon>SearchApplications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SuccessfulRegistration.xaml.cs">
       <DependentUpon>SuccessfulRegistration.xaml</DependentUpon>
     </Compile>
@@ -126,6 +135,14 @@
     <Compile Include="ToursHome.xaml.cs">
       <DependentUpon>ToursHome.xaml</DependentUpon>
     </Compile>
+    <Page Include="ApplicationOutput1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChoiceActionsAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +180,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchApplications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,9 +304,12 @@
     <Resource Include="почта.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="поиск.png" />
+    <Resource Include="icons8-отследить-отправление-через-мобильный-24.png" />
     <Content Include="Palm - 44399.mp4" />
     <Content Include="Waves - 61950.mp4" />
     <Content Include="Звуки природы Star — Музыкотерапия.mp3" />
+    <Resource Include="курорт1.jpg" />
     <Resource Include="назад стрелка.png" />
     <Resource Include="фон для туров.png" />
   </ItemGroup>

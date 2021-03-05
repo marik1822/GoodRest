@@ -50,5 +50,11 @@ namespace GoodRest
             Helper.CloseWindow(Window.GetWindow(this));
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new Applications().Show();
+            Helper.CloseWindow(Window.GetWindow(this));
+        }
     }
 }

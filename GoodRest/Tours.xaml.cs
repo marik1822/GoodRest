@@ -46,5 +46,11 @@ namespace GoodRest
             new Greeting().Show();
             this.Close();
         }
+
+        private void LogOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            new MainWindow().Show();
+            Helper.CloseWindow(Window.GetWindow(this));
+        }
     }
 }
