@@ -65,10 +65,17 @@ namespace GoodRest
                 Error.Text = "Вы не ввели логин";
             }
             else
-            if (Password.Text == "") {
+            if (Password.Text == "")
+            {
                 Error.Text = "Вы не ввели пароль";
-            } else
-            new Greeting().Show();
+            }
+            else
+                if (NoRobot.IsChecked == true)
+            {
+                new Greeting().Show();
+            }
+            else
+                Error.Text = "Поставьте галочку в поле я не робот";
             //Helper.CloseWindow(Window.GetWindow(this));
         }
 

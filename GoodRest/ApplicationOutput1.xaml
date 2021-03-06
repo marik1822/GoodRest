@@ -7,8 +7,70 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ApplicationOutput1" Width="740" Height="290" Background="#BFF1F2F5">
+    <Page.Resources>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+
+                            <Border x:Name="border" CornerRadius="20" BorderBrush="Black" >
+                                <Border.Background>
+
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF5E70AE" Offset="1"/>
+                                        <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                                        <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextElement.FontWeight="Bold"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid >
-        
+        <Label Content="номер заявки:" HorizontalAlignment="Left" Height="36" Margin="26,28,0,0" VerticalAlignment="Top" Width="135" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="ФИО клиента:" HorizontalAlignment="Left" Height="36" Margin="26,69,0,0" VerticalAlignment="Top" Width="135" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="количество путёвок:" HorizontalAlignment="Left" Height="36" Margin="26,144,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="наименование тура:" HorizontalAlignment="Left" Height="36" Margin="26,185,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="статус:" HorizontalAlignment="Left" Height="36" Margin="26,226,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.445,0.508"/>
+        <Label Content="дата подачи заявки:" HorizontalAlignment="Left" Height="36" Margin="26,108,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+
+
     </Grid>
 </Page>

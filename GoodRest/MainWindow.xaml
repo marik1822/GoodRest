@@ -126,7 +126,7 @@
             <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="119,120,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
         </Border>
         <Label Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="481.2,204,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558" Grid.Row="1" Grid.Column="2"/>
-        <CheckBox  Content="" HorizontalAlignment="Left" Height="23" Margin="780.2,526,0,0" VerticalAlignment="Top" Width="36" Foreground="#FF96969F" RenderTransformOrigin="0.389,0.523" Grid.Row="1" Grid.Column="2"/>
+        <CheckBox Name="NoRobot" Content="" HorizontalAlignment="Left" Height="23" Margin="780.2,526,0,0" VerticalAlignment="Top" Width="36" Foreground="#FF96969F" RenderTransformOrigin="0.389,0.523" Grid.Row="1" Grid.Column="2"/>
         <Image HorizontalAlignment="Left" Height="22" Margin="411.2,327,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5" Grid.Row="1" Grid.Column="2"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="276.2,190,0,0" VerticalAlignment="Top" Width="703" Grid.Row="1" Grid.Column="2"/>
         <Button Style="{DynamicResource RoundCorner}"  Content="ВХОД" HorizontalAlignment="Left" Margin="625.2,507,0,0" VerticalAlignment="Top" Width="114" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click" Grid.Row="1" Grid.Column="2" Cursor="Hand"  >
