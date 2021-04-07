@@ -9,7 +9,7 @@
         WindowStyle="None"
         Icon="логотип.png"
        x:Name="Greeting1"
-        Title="GoodRest" Height="754.087" Width="1514.85" Foreground="{x:Null}" Activated="Window_Activated" Unloaded="Greeting1_Unloaded" Loaded="Greeting1_Loaded">
+        Title="GoodRest" Height="1080" Width="1920" Foreground="{x:Null}" Activated="Window_Activated" Unloaded="Greeting1_Unloaded" Loaded="Greeting1_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="фон для облаков2.jpg"/>
     </Window.Background>
@@ -70,7 +70,7 @@
         </Style>
     </Window.Resources>
     <Grid Height="754.087" Loaded="Grid_Loaded">
-        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="304" Margin="356,212,0,0"  VerticalAlignment="Top" Width="740" Background="#BFF1F2F5"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="304" Margin="569,212,0,0"  VerticalAlignment="Top" Width="740" Background="#BFF1F2F5"/>
         <Image Name="Cloud1" HorizontalAlignment="Left" Height="708" Margin="757,313,-135.2,-266.913" VerticalAlignment="Top" Width="887" Source="cloud-01.png" Loaded="Cloud1_Loaded">
 
         </Image>
@@ -79,7 +79,7 @@
         </Image>
         <Image Name="Cloud3" HorizontalAlignment="Left" Height="447" Margin="59,436,0,-128.913" VerticalAlignment="Top" Width="966" Source="cloud-03.png" Loaded="Cloud3_Loaded"/>
         <Image Name="Cloud4" HorizontalAlignment="Left" Height="517" Margin="27,-46,0,0" VerticalAlignment="Top" Width="882" Source="cloud-04.png" Loaded="Cloud4_Loaded"/>
-       <Button Name="Next" Style="{DynamicResource RoundCorner}"  Content="ПРОДОЛЖИТЬ" HorizontalAlignment="Left" Margin="356,471,0,0" VerticalAlignment="Top" Width="740" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45"  Cursor="Hand" Click="Next_Click"   >
+        <Button Name="Next" Style="{DynamicResource RoundCorner}"  Content="ПРОДОЛЖИТЬ" HorizontalAlignment="Left" Margin="569,471,0,0" VerticalAlignment="Top" Width="740" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45"  Cursor="Hand" Click="Next_Click"   >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -116,6 +116,6 @@
             </Image.Style>
         </Image>-->
         
-        <Frame Name="MainFraime" HorizontalAlignment="Left" Height="304" Margin="356,212,0,0" VerticalAlignment="Top" Width="740"/>
+        <Frame Name="MainFraime" HorizontalAlignment="Left" Height="304" Margin="569,212,0,0" VerticalAlignment="Top" Width="740"/>
     </Grid>
 </Window>

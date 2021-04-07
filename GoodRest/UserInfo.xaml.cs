@@ -16,18 +16,15 @@ using System.Windows.Shapes;
 namespace GoodRest
 {
     /// <summary>
-    /// Логика взаимодействия для ToursHome.xaml
+    /// Логика взаимодействия для UserInfo.xaml
     /// </summary>
-    public partial class ToursHome : Page
+    public partial class UserInfo : Page
     {
-        public ToursHome()
+        public UserInfo()
         {
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
     }
 }

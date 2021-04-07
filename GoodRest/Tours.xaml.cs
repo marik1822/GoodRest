@@ -19,9 +19,12 @@ namespace GoodRest
     /// </summary>
     public partial class Tours : Window
     {
+        //public string login1_;
         public Tours()
         {
             InitializeComponent();
+
+            LoginUser.Text = MainWindow.login_;
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -43,7 +46,7 @@ namespace GoodRest
 
         private void Back_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            new Greeting().Show();
+             new Greeting().Show();
             this.Close();
         }
 
@@ -51,6 +54,35 @@ namespace GoodRest
         {
             new MainWindow().Show();
             Helper.CloseWindow(Window.GetWindow(this));
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ToursFrame.Content = null;
+            ToursFrame.Content = new UserInfo();
+            
+        }
+
+        private void Contact_Click(object sender, RoutedEventArgs e)
+        {
+           ToursFrame.Content = null;
+           ToursFrame.Content = new ContactInformation();
+        }
+
+        private void Main_Click(object sender, RoutedEventArgs e)
+        {
+            ToursFrame.Content = null;
+            ToursFrame.Content = new ToursHome();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            City.Text = "Москва";
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            City.Text = "Санкт-Петербург";
         }
     }
 }

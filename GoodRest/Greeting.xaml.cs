@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
+using GoodRest;
 
 
 namespace GoodRest
@@ -21,12 +22,15 @@ namespace GoodRest
     /// </summary>
     public partial class Greeting : Window
     {
+        
         private MediaPlayer _mpBgr;
         public Greeting()
         {
             InitializeComponent();
             _mpBgr = new MediaPlayer();
             
+
+
         }
 
        
@@ -118,18 +122,25 @@ namespace GoodRest
             _mpBgr.Position = TimeSpan.FromMinutes(0.10);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainFraime.Content = new ChoiceActionsClients();
-            
-        }
+        
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             Next.IsEnabled = false;
             Next.Opacity = 0.0;
             MainFraime.Content = null;
-            MainFraime.Content = new ChoiceActionsClients();
+            switch (MainWindow.role_)
+            {
+                case "0"://Администратор
+                    MainFraime.Content = new ChoiceActionsAdmin();
+                    break;
+                case "1"://Клиент
+                    MainFraime.Content = new ChoiceActionsClients();
+                    break;
+                case "2"://Турагент
+                    MainFraime.Content = new ChoiceActionsTravelAgent();
+                    break;
+            }
         }
         public void Close_window() 
         {

@@ -1,4 +1,4 @@
-﻿<Page x:Class="GoodRest.ApplicationOutput1"
+﻿<Page x:Class="GoodRest.UserInfo"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,11 @@
       xmlns:local="clr-namespace:GoodRest"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ApplicationOutput1" Width="740" Height="290" Background="#BFF1F2F5">
+      Width="1448" Height="823" 
+      ShowsNavigationUI="False"
+      Title="UserInfo" Foreground="{x:Null}" Background="#99F0F0F0">
     <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -27,8 +30,9 @@
                                     </LinearGradientBrush>
                                 </Border.Background>
                                 <ContentPresenter HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    TextElement.FontWeight="Bold"/>
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
                             </Border>
 
                         </Grid>
@@ -62,21 +66,27 @@
             </Setter>
         </Style>
     </Page.Resources>
-
-    <Grid >
-        <Label Content="номер заявки:" HorizontalAlignment="Left" Height="36" Margin="26,28,0,0" VerticalAlignment="Top" Width="135" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="ФИО клиента:" HorizontalAlignment="Left" Height="36" Margin="26,69,0,0" VerticalAlignment="Top" Width="135" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="количество путёвок:" HorizontalAlignment="Left" Height="36" Margin="26,144,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="наименование тура:" HorizontalAlignment="Left" Height="36" Margin="26,185,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="статус:" HorizontalAlignment="Left" Height="36" Margin="26,226,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.445,0.508"/>
-        <Label Content="дата подачи заявки:" HorizontalAlignment="Left" Height="36" Margin="26,108,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <TextBlock Name="Id" Text="123213"  HorizontalAlignment="Left" Margin="166,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="FIO" Text="Домбровская Мария Антоновна"  HorizontalAlignment="Left" Margin="166,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="Date" Text="22.07.2002"  HorizontalAlignment="Left" Margin="210,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="KolPyt" Text="3"  HorizontalAlignment="Left" Margin="215,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock x:Name="NameTur" Text="Тур по Питеру"  HorizontalAlignment="Left" Margin="215,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock x:Name="Status" Text="Рассматривается"  HorizontalAlignment="Left" Margin="95,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-
+    <Grid Width="1448">
+        <Label Content="Информация" HorizontalAlignment="Left" Height="59" Margin="596,0,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Фамилия:" HorizontalAlignment="Left" Height="36" Margin="47,127,0,0" VerticalAlignment="Top" Width="123" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.499,0.139"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Height="36" Margin="47,201,0,0" VerticalAlignment="Top" Width="64" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Отчество:" HorizontalAlignment="Left" Height="36" Margin="47,284,0,0" VerticalAlignment="Top" Width="110" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" Height="36" Margin="47,354,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Адрес электоронной почты:" HorizontalAlignment="Left" Height="36" Margin="47,422,0,0" VerticalAlignment="Top" Width="312" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Серия паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,493,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,562,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Button Style="{DynamicResource RoundCorner}"  Content="Редактировать информацию" HorizontalAlignment="Left" Margin="596,708,0,0" VerticalAlignment="Top" Width="270" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="44" Cursor="Hand" >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

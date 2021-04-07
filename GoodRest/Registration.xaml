@@ -8,7 +8,7 @@
         WindowState="Maximized"
         WindowStyle="None"
         Icon="логотип.png"
-        Title="GoodRest" Height="754.4" Width="1515.2">
+        Title="GoodRest" Height="1080" Width="1920">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
@@ -91,9 +91,50 @@
         <Grid.Background>
             <ImageBrush ImageSource="скидки.jpg"/>
         </Grid.Background>
-        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="416" Margin="492,180,0,0"  VerticalAlignment="Top" Width="552" Background="#BFF1F2F5"/>
-        <Label Content="РЕГИСТРАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="623,180,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Image Name="Exit" ToolTip="Выход"  HorizontalAlignment="Left" Height="43" Margin="1000,181,0,0" VerticalAlignment="Top" Width="40" Source="крест.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+        <Border BorderThickness="1" HorizontalAlignment="Left" CornerRadius="10" Height="446" Margin="684,330,0,0"  VerticalAlignment="Top" Width="552" Background="#BFF1F2F5"/>
+        <Label Content="РЕГИСТРАЦИЯ" HorizontalAlignment="Left" Height="52" Margin="826,330,0,0" VerticalAlignment="Top" Width="310" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Button Name="Button" Style="{DynamicResource RoundCorner}"    Content="РЕГИСТРАЦИЯ"  HorizontalAlignment="Left" Margin="1091,712,0,0" VerticalAlignment="Top" Width="125" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Cursor="Hand" Click="Button_Click"  >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF133939" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image Name="Back" HorizontalAlignment="Left" ToolTip="Назад" Height="29" Margin="706,344,0,0" VerticalAlignment="Top" Width="39" Source="назадСерый.png" MouseLeftButtonDown="Back_MouseLeftButtonDown">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Back}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="737,445,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
+        <Image HorizontalAlignment="Left" Height="16" Margin="748,458,0,0" VerticalAlignment="Top" Width="23" Source="почта.PNG" RenderTransformOrigin="0.377,0.521"/>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="737,575,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="745,584,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="737,512,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,521,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBox Name="Login"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="771,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="748,520,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,586,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Password}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,456,0,0" TextWrapping="Wrap" Text="Электронная почта" VerticalAlignment="Top" Width="148" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Email}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="737,641,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
+        <Image HorizontalAlignment="Left" Height="22" Margin="748,650,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
+        <TextBlock HorizontalAlignment="Left" Margin="771,652,0,0" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top" Width="132" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=NewPassword}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBox x:Name="Email"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="771,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <TextBlock Name="Error" HorizontalAlignment="Left" Height="35" Margin="776,712,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Foreground="#FFE81919" FontFamily="Microsoft YaHei UI"/>
+        <TextBox x:Name="NewPassword"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="24" Margin="771,650,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <TextBox x:Name="Password"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="771,584,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <Frame x:Name="Successful" HorizontalAlignment="Left" Height="161" Margin="812,478,0,0" VerticalAlignment="Top" Width="298"/>
+        <Image x:Name="Exit" ToolTip="Выход"  HorizontalAlignment="Left" Height="51" Margin="1191,327,0,0" VerticalAlignment="Top" Width="46" Source="крест.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
@@ -108,53 +149,12 @@
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Exit}" Value="True">
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Exit}" Value="True">
                             <Setter Property="Opacity" Value="0.5"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Image.Style>
         </Image>
-        <Button Name="Button" Style="{DynamicResource RoundCorner}"    Content="РЕГИСТРАЦИЯ"  HorizontalAlignment="Left" Margin="836,524,0,0" VerticalAlignment="Top" Width="125" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Cursor="Hand" Click="Button_Click"  >
-            <Button.Effect>
-                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
-            </Button.Effect>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5E70AE" Offset="1"/>
-                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
-                    <GradientStop Color="#FF133939" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Image Name="Back" HorizontalAlignment="Left" ToolTip="Назад" Height="29" Margin="509,188,0,0" VerticalAlignment="Top" Width="39" Source="назадСерый.png" MouseLeftButtonDown="Back_MouseLeftButtonDown">
-            <Image.Style>
-                <Style TargetType="{x:Type Image}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Back}" Value="True">
-                            <Setter Property="Opacity" Value="0.5"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Image.Style>
-        </Image>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,262,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
-        <Image HorizontalAlignment="Left" Height="16" Margin="568,273,0,0" VerticalAlignment="Top" Width="23" Source="почта.PNG"/>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,395,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
-        <Image HorizontalAlignment="Left" Height="22" Margin="562,404,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,329,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="596,338,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Login}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-        <TextBox Name="Login"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,337,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <Image HorizontalAlignment="Left" Height="22" Margin="568,338,0,0" VerticalAlignment="Top" Width="23" Source="логин1.PNG" RenderTransformOrigin="0.478,0.5"/>
-        <TextBlock HorizontalAlignment="Left" Margin="596,406,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="56" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Password}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="596,270,0,0" TextWrapping="Wrap" Text="Электронная почта" VerticalAlignment="Top" Width="148" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=Email}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="550,462,0,0" VerticalAlignment="Top" Width="461" CornerRadius="20" Background="#FFDFE0E1"/>
-        <Image HorizontalAlignment="Left" Height="22" Margin="562,470,0,0" VerticalAlignment="Top" Width="38" Source="Пароль.PNG"/>
-        <TextBlock HorizontalAlignment="Left" Margin="596,474,0,0" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top" Width="132" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=NewPassword}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-        <TextBox x:Name="NewPassword"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <TextBox x:Name="Password"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="596,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <TextBox x:Name="Email"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="591,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <TextBlock Name="Error" HorizontalAlignment="Left" Height="35" Margin="562,534,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Foreground="#FFE81919" FontFamily="Microsoft YaHei UI"/>
-        <Frame Name="Successful" HorizontalAlignment="Left" Height="161" Margin="605,313,0,0" VerticalAlignment="Top" Width="298"/>
     </Grid>
 </Window>

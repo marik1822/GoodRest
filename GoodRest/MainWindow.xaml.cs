@@ -13,12 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Drawing;
+using System.Configuration.Assemblies;
 using System.Windows.Media.Animation;
 
 
@@ -30,6 +34,12 @@ namespace GoodRest
     /// </summary>
     public partial class MainWindow : Window
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        DataTable Client;
+        DataTable Employee;
+
+
         private Page Registration;
         private Greeting_GoodRest _greeting_GoodRest;
 
@@ -38,12 +48,29 @@ namespace GoodRest
 
         private double _frameOpacity;
         public double FrameOpacity { get { return _frameOpacity; } set { _frameOpacity = value; } }
+        public static string role_{ get; set; }
+        public static string login_ { get; set ; }
+        public static string password_ { get; set;  }
+        public static string name_ { get; set; }
+        public static string surname_ { get; set; }
         public MainWindow()
         {
             InitializeComponent();
            // MainFrame.Content = new Greeting_GoodRest();
             FrameOpacity = 1;
             CurrentPage = null;
+
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                //Error.Text = "подключено БД";
+            }
+            catch (SqlException) 
+            {
+                Error.Text = "Ошибка подключения БД!!!";
+            }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -54,6 +81,13 @@ namespace GoodRest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string sql;
+            string sql2;
+            Client= new DataTable();
+            Employee = new DataTable();
+            password_ = Password.Text.Trim();
+            login_ = Login.Text.Trim();
+            SqlConnection connection = null;
             Error.Text = "";
             if ((Login.Text == "") && (Password.Text == ""))
             {
@@ -72,13 +106,54 @@ namespace GoodRest
             else
                 if (NoRobot.IsChecked == true)
             {
-                new Greeting().Show();
+                //string role;
+               sql = "SELECT login,password, Role,Name_,Surname from Client where ((Login='"+login_+"') and (Password='"+password_+"'))";
+               sql2 = "SELECT login,password, Role from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
+               // sql = "SELECT login,password, Role from Client where ((Login='marik') and (Password='marik'))";
+                connection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(sql, connection);
+                //command.Parameters.AddWithValue("@login",log);
+                //command.Parameters.AddWithValue("@password",pass);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    role_ = reader[2].ToString();
+                    name_ = reader[3].ToString();
+                    surname_ = reader[4].ToString();
+                    new Greeting().Show();
+                   // Error.Text = role_;
+                    return;
+                }
+                reader.Close();
+                //connection.Close();
+                //connection= new SqlConnection(connectionString);
+                SqlCommand command2 = new SqlCommand(sql2, connection);
+                SqlDataReader reader2 = command2.ExecuteReader();
+                while (reader2.Read())
+                {
+                    role_ = reader2[2].ToString();
+                    new Greeting().Show();
+                    this.Close();
+                    Error.Text = role_;
+                    return;
+                }
+                reader2.Close();
+                
+                Error.Text = "Неверный логин или пароль";
+                Login.Text = "";
+                Password.Text = "";
+                NoRobot.IsChecked = false;
+                
+                connection.Close();
+
+                // new Greeting().Show();
             }
             else
                 Error.Text = "Поставьте галочку в поле я не робот";
             //Helper.CloseWindow(Window.GetWindow(this));
         }
-
+        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

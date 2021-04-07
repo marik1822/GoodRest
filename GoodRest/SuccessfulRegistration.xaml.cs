@@ -32,7 +32,7 @@ namespace GoodRest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new Greeting().Show();
+           // new Greeting().Show();
             Helper.CloseWindow(Window.GetWindow(this));
         }
     }

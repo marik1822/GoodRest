@@ -7,16 +7,16 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="GoodRest.Tours"
         mc:Ignorable="d"
         WindowState="Maximized"
-        WindowStyle="None"
-        Icon="логотип.png"
-        Title="GoodRest" Height="754.087" Width="1514.85" Loaded="Window_Loaded">
+        WindowStyle="None" 
+        Icon="логотип.png"   
+        Title="GoodRest" Height="1080" Width="1920" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="фон для туров.png"/>
     </Window.Background>
     <Grid>
 
         <Menu Height="51" VerticalAlignment="Top" Margin="240,80,229.8,0" Background="#B2F0F0F0">
-            <MenuItem Header="       ГЛАВНАЯ" Foreground="#FF2D4F60" Height="53" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand"/>
+            <MenuItem Name="Main" Header="       ГЛАВНАЯ" Foreground="#FF2D4F60" Height="53" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" Click="Main_Click" />
             <MenuItem Header="  О КОМПАНИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
 
             <MenuItem Header="         ТУРЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" >
@@ -30,14 +30,13 @@
                 <Separator />
                 <MenuItem Header="Все туры" />
             </MenuItem>
-            <MenuItem Header="     КОНТАКТЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+            <MenuItem Name="Contact" Header="     КОНТАКТЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" Click="Contact_Click"  />
             <MenuItem Height="38" Width="185" Foreground="#FF2D4F5B" Cursor="Hand" >
-                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" />
-                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Калининград" />
-                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Санкт-Петербург" />
+                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" Cursor="Hand" Click="MenuItem_Click" />
+                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Санкт-Петербург" Cursor="Hand" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>
-        <Image HorizontalAlignment="Left" x:Name="Exit" ToolTip="Выход" Height="29" Margin="1240,90,0,0" VerticalAlignment="Top" Width="30" Source="выключение.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand">
+        <Image HorizontalAlignment="Left" x:Name="Exit" ToolTip="Выход" Height="29" Margin="1639,89,0,0" VerticalAlignment="Top" Width="30" Source="выключение.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
@@ -51,7 +50,7 @@
                 </Style>
             </Image.Style>
         </Image>
-        <Image HorizontalAlignment="Left" x:Name="Back" ToolTip="Назад" Height="24" Margin="1203,92,0,0" VerticalAlignment="Top" Width="24" Source="назад стрелка.png" Cursor="Hand" MouseLeftButtonDown="Back_MouseLeftButtonDown">
+        <Image HorizontalAlignment="Left" x:Name="Back" ToolTip="Назад" Height="24" Margin="1599,91,0,0" VerticalAlignment="Top" Width="24" Source="назад стрелка.png" Cursor="Hand" MouseLeftButtonDown="Back_MouseLeftButtonDown">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
@@ -65,10 +64,10 @@
                 </Style>
             </Image.Style>
         </Image>
-        <Frame Name="ToursFrame" HorizontalAlignment="Left" Height="587" Margin="240,151,0,0" VerticalAlignment="Top" Width="1065"/>
-        <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="24" Margin="845,94,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
-        <Label Content="Санкт-Петербург" HorizontalAlignment="Left" Height="28" Margin="915,94,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
-        <Image Name="LogOut" HorizontalAlignment="Left" ToolTip="Выход из аккаунта" Height="30" Margin="1162,89,0,0" VerticalAlignment="Top" Width="36" Source="назад.png" Cursor="Hand" MouseLeftButtonDown="LogOut_MouseLeftButtonDown">
+        <Frame local:DisableNavigation.Disable="True"  Name="ToursFrame" HorizontalAlignment="Left" Height="823" Margin="240,151,0,0" VerticalAlignment="Top" Width="1448"/>
+        <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="28" Margin="845,94,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
+        <TextBlock Name="City"  Text="Санкт-Петербург" HorizontalAlignment="Left" Height="19" Margin="920,99,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
+        <Image Name="LogOut" HorizontalAlignment="Left" ToolTip="Выход из аккаунта" Height="30" Margin="1503,88,0,0" VerticalAlignment="Top" Width="36" Source="назад.png" Cursor="Hand" MouseLeftButtonDown="LogOut_MouseLeftButtonDown">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
@@ -82,6 +81,7 @@
                 </Style>
             </Image.Style>
         </Image>
-        <TextBlock HorizontalAlignment="Left" Margin="1028,99,0,0" TextWrapping="Wrap" Text="тут должен быть логин" VerticalAlignment="Top" Width="129" Height="19" Foreground="#FF2D4F5B"/>
+        <TextBlock Name="LoginUser" HorizontalAlignment="Left" Margin="1390,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108" Height="19" Foreground="#FF2D4F5B" Cursor="Hand" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+       
     </Grid>
 </Window>

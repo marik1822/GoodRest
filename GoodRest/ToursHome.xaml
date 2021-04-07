@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GoodRest"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ToursHome" Width="1065" Height="587" Foreground="{x:Null}" Background="#99F0F0F0">
+      ShowsNavigationUI="False"
+      d:DesignHeight="450" d:DesignWidth="823"
+      
+      Title="ToursHome" Width="1448" Height="823" Foreground="{x:Null}" Background="#99F0F0F0" Loaded="Page_Loaded">
 
-    <Grid>
-        <Image HorizontalAlignment="Left" Height="196" Margin="254,29,0,0" VerticalAlignment="Top" Width="581" Source="курорт1.jpg"/>
-
-    </Grid>
+    <Grid/>
 </Page>
