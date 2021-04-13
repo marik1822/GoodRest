@@ -37,7 +37,7 @@ namespace GoodRest
 
         private void Back_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //new Greeting().Show();
+            new Greeting().Show();
             Helper.CloseWindow(Window.GetWindow(this));
         }
     }

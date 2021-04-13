@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Width="1448" Height="823"
       ShowsNavigationUI="False"
-      Title="ContactInformation"  Background="#99F0F0F0">
+      Title="ContactInformation"  Background="#99F0F0F0" Loaded="Page_Loaded">
 
     <Grid>
         <Label Content="Контактная Информация" HorizontalAlignment="Left" Height="59" Margin="487,10,0,0" VerticalAlignment="Top" Width="490" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
@@ -19,6 +19,8 @@
         <Image HorizontalAlignment="Left" Height="507" Margin="47,74,0,0" VerticalAlignment="Top" Width="1365" Source="карта2.PNG"/>
         <TextBlock HorizontalAlignment="Left" Margin="318,672,0,0" TextWrapping="Wrap" Text="GoodRestmail@gmail.com" VerticalAlignment="Top" Height="40" Width="328" Foreground="#FF2D4F5B" FontSize="25" FontFamily="Microsoft YaHei"/>
         <TextBlock HorizontalAlignment="Left" Margin="238,742,0,0" TextWrapping="Wrap" Text="+ 7 495 127-27-57" VerticalAlignment="Top" Height="40" Width="232" Foreground="#FF2D4F5B" FontSize="25" FontFamily="Microsoft YaHei"/>
+        
+
 
     </Grid>
 </Page>

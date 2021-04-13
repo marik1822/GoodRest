@@ -118,5 +118,6 @@
             </Image.Style>
         </Image>
         <Frame Name="FrameSearch1"  HorizontalAlignment="Left" Height="290" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="740"/>
+        <TextBlock  Name ="Error" HorizontalAlignment="Left" Margin="168,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" Foreground="#FFCF2626"/>
     </Grid>
 </Page>

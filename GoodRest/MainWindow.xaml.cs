@@ -53,6 +53,7 @@ namespace GoodRest
         public static string password_ { get; set;  }
         public static string name_ { get; set; }
         public static string surname_ { get; set; }
+        public static string id_client { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -107,7 +108,7 @@ namespace GoodRest
                 if (NoRobot.IsChecked == true)
             {
                 //string role;
-               sql = "SELECT login,password, Role,Name_,Surname from Client where ((Login='"+login_+"') and (Password='"+password_+"'))";
+               sql = "SELECT login,password, Role,Name_,Surname,Id_Client from Client where ((Login='" + login_+"') and (Password='"+password_+"'))";
                sql2 = "SELECT login,password, Role from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
                // sql = "SELECT login,password, Role from Client where ((Login='marik') and (Password='marik'))";
                 connection = new SqlConnection(connectionString);
@@ -121,6 +122,7 @@ namespace GoodRest
                     role_ = reader[2].ToString();
                     name_ = reader[3].ToString();
                     surname_ = reader[4].ToString();
+                    id_client = reader[5].ToString();
                     new Greeting().Show();
                    // Error.Text = role_;
                     return;

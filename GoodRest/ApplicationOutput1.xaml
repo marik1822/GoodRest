@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GoodRest"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ApplicationOutput1" Width="740" Height="290" Background="#BFF1F2F5">
+      Title="ApplicationOutput1" Width="740" Height="290" Background="#F2FFFFFF" Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -70,12 +70,12 @@
         <Label Content="наименование тура:" HorizontalAlignment="Left" Height="36" Margin="26,185,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
         <Label Content="статус:" HorizontalAlignment="Left" Height="36" Margin="26,226,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.445,0.508"/>
         <Label Content="дата подачи заявки:" HorizontalAlignment="Left" Height="36" Margin="26,108,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <TextBlock Name="Id" Text="123213"  HorizontalAlignment="Left" Margin="166,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="FIO" Text="Домбровская Мария Антоновна"  HorizontalAlignment="Left" Margin="166,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="Date" Text="22.07.2002"  HorizontalAlignment="Left" Margin="210,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="KolPyt" Text="3"  HorizontalAlignment="Left" Margin="215,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock x:Name="NameTur" Text="Тур по Питеру"  HorizontalAlignment="Left" Margin="215,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock x:Name="Status" Text="Рассматривается"  HorizontalAlignment="Left" Margin="95,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="Id"  HorizontalAlignment="Left" Margin="166,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="FIO"  HorizontalAlignment="Left" Margin="166,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="564" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="Date"  HorizontalAlignment="Left" Margin="210,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="KolPyt"  HorizontalAlignment="Left" Margin="215,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock x:Name="NameTur"  HorizontalAlignment="Left" Margin="215,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock x:Name="Status"  HorizontalAlignment="Left" Margin="95,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
 
 
     </Grid>
