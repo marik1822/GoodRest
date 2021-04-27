@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace GoodRest
 {
@@ -20,40 +23,58 @@ namespace GoodRest
     /// </summary>
     public partial class AllTour : Page
     {
+        static string connectionString;
+        SqlDataAdapter adapter;
+        static DataTable Tour;
         public AllTour()
         {
             InitializeComponent();
-         //   CreateList();
-         //   CreateTable();
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                //подключено БД
+            }
+            catch (SqlException)
+            {
+                //Ошибка подключения БД!!
+            }
         }
-
-       /* private void CreateTable()
+        static DataTable ExecuteSql(string sql)
         {
-
-            for (int i =0;i<3 :i++)
+            //string sql;
+            Tour = new DataTable();
+            SqlConnection connection = null;
+           
+            connection = new SqlConnection(connectionString);
+            using (connection)
             {
-                //создание столбцов 
-            }
-            for (int i = 0; i < all; i++) 
-            { 
-               //создать столько строк чтобы вывести 
-               //count/3+1 count -количество элементов списка
-              
-            }
-            for(int i = 0; i < all; i++)
-            {
-                for (int j = 0; j < 3; j++)
+                connection.Open();
+                SqlCommand command = new SqlCommand(sql, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                using (reader)
                 {
-                    grid.Children.Add(listname[i*3+j]);
+                    Tour.Load(reader);
                 }
             }
+            return Tour;
         }
-
-        private void CreateList()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //список из кнопок.
-            //на кнопку stec панель 
-           
-        } */
+            if (Tours.cityV == "Москва")
+            {
+                //хранимая процедура
+                DataTable Tour = ExecuteSql("SELECT * from AllTourMoscow;");
+                LViewTours.ItemsSource = Tour.DefaultView;
+            } else
+                if (Tours.cityV == "Санкт-Петербург")
+            {
+               //хранимая процедура
+            DataTable Tour = ExecuteSql("SELECT * from AllTourPiter;");
+            LViewTours.ItemsSource = Tour.DefaultView;
+            }
+            
+        }
     }
 }

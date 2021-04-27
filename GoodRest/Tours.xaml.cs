@@ -14,25 +14,38 @@ using System.Windows.Shapes;
 
 namespace GoodRest
 {
+    
     /// <summary>
     /// Логика взаимодействия для Tours.xaml
     /// </summary>
     public partial class Tours : Window
     {
+        /// <summary>
+        /// Переменная для города вылета
+        /// </summary>
+        public static string cityV { get; set; }
         //public string login1_;
         public Tours()
         {
             InitializeComponent();
-
+            cityV = "Санкт-Петербург";
             LoginUser.Text = MainWindow.login_;
         }
-
+        /// <summary>
+        /// Кнопка выход
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Environment.Exit(0);
         }
       
-
+        /// <summary>
+        /// Появление окна Tours
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             VisualBrush vb = new VisualBrush();
@@ -43,19 +56,31 @@ namespace GoodRest
             this.Background = vb;
             ToursFrame.Content = new ToursHome();
         }
-
+        /// <summary>
+        /// Кнопка назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Back_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
              new Greeting().Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Кнопка выхода из аккаунта
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LogOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             new MainWindow().Show();
             Helper.CloseWindow(Window.GetWindow(this));
         }
-
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ToursFrame.Content = null;
@@ -78,11 +103,26 @@ namespace GoodRest
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             City.Text = "Москва";
+            cityV = "Москва";
+            ToursFrame.Content = new ToursHome();
+
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             City.Text = "Санкт-Петербург";
+            cityV = "Санкт-Петербург";
+            ToursFrame.Content = new ToursHome();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            ToursFrame.Content = new SearchTours();
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            ToursFrame.Content = new AllTour();
         }
     }
 }

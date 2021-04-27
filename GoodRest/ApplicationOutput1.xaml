@@ -70,12 +70,12 @@
         <Label Content="наименование тура:" HorizontalAlignment="Left" Height="36" Margin="26,185,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
         <Label Content="статус:" HorizontalAlignment="Left" Height="36" Margin="26,226,0,0" VerticalAlignment="Top" Width="69" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.445,0.508"/>
         <Label Content="дата подачи заявки:" HorizontalAlignment="Left" Height="36" Margin="26,108,0,0" VerticalAlignment="Top" Width="184" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <TextBlock Name="Id"  HorizontalAlignment="Left" Margin="166,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="Id"  HorizontalAlignment="Left" Margin="166,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="564" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
         <TextBlock Name="FIO"  HorizontalAlignment="Left" Margin="166,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="564" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
         <TextBlock Name="Date"  HorizontalAlignment="Left" Margin="210,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock Name="KolPyt"  HorizontalAlignment="Left" Margin="215,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock Name="KolPyt"  HorizontalAlignment="Left" Margin="215,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
         <TextBlock x:Name="NameTur"  HorizontalAlignment="Left" Margin="215,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
-        <TextBlock x:Name="Status"  HorizontalAlignment="Left" Margin="95,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
+        <TextBlock x:Name="Status"  HorizontalAlignment="Left" Margin="95,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="635" Foreground="#FF2D4F5B" FontSize="16" FontFamily="Microsoft YaHei"/>
 
 
     </Grid>

@@ -54,6 +54,7 @@ namespace GoodRest
         public static string name_ { get; set; }
         public static string surname_ { get; set; }
         public static string id_client { get; set; }
+        public static string email { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -124,6 +125,7 @@ namespace GoodRest
                     surname_ = reader[4].ToString();
                     id_client = reader[5].ToString();
                     new Greeting().Show();
+                    this.Close();
                    // Error.Text = role_;
                     return;
                 }

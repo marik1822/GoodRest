@@ -26,13 +26,13 @@
                     <MenuItem Header="Турция"/>
                     <MenuItem Header="Египет" />
                 </MenuItem>
-                <MenuItem Header="Поиск тура" />
+                <MenuItem Header="Поиск тура" Click="MenuItem_Click_2" />
                 <Separator />
-                <MenuItem Header="Все туры" />
+                <MenuItem Header="Все туры" Click="MenuItem_Click_3" />
             </MenuItem>
             <MenuItem Name="Contact" Header="     КОНТАКТЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" Click="Contact_Click"  />
             <MenuItem Height="38" Width="185" Foreground="#FF2D4F5B" Cursor="Hand" >
-                <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" Cursor="Hand" Click="MenuItem_Click" />
+                <MenuItem  Background="{x:Null}" BorderBrush="{x:Null}" Header="Москва" Cursor="Hand" Click="MenuItem_Click" />
                 <MenuItem Background="{x:Null}" BorderBrush="{x:Null}" Header="Санкт-Петербург" Cursor="Hand" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>

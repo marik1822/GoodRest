@@ -358,11 +358,14 @@
     <Resource Include="почта.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Шарм-эль-шейх Надпись.jpg" />
+    <Resource Include="ХургадаНадпись.jpg" />
     <Resource Include="карта2.PNG" />
     <Resource Include="карта.PNG" />
     <Resource Include="сотни довольных туристов.png" />
     <Resource Include="поиск.png" />
     <Resource Include="icons8-отследить-отправление-через-мобильный-24.png" />
+    <Resource Include="NOphoto.png" />
     <Content Include="Palm - 44399.mp4" />
     <Content Include="Waves - 61950.mp4" />
     <Content Include="Звуки природы Star — Музыкотерапия.mp3" />

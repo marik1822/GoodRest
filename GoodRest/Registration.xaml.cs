@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace GoodRest
 {
@@ -20,11 +24,41 @@ namespace GoodRest
     /// </summary>
     public partial class Registration : Window
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        DataTable Client;
         public Registration()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                //Error.Text = "подключено БД";
+            }
+            catch (SqlException)
+            {
+                Error.Text = "Ошибка подключения БД!!!";
+            }
         }
 
+        public string Random_()
+        {
+            Random rnd = new Random();
+            int value1 = rnd.Next(0, 9);
+            int value2 = rnd.Next(0, 9);
+            int value3 = rnd.Next(0, 9);
+            int value4 = rnd.Next(0, 9);
+            int value5 = rnd.Next(0, 9);
+            int value6 = rnd.Next(0, 9);
+            int value7 = rnd.Next(0, 9);
+            int value8 = rnd.Next(0, 9);
+            int value9 = rnd.Next(0, 9);
+            int value10 = rnd.Next(0, 9);
+            string id_client = value1.ToString() + value2.ToString() + value3.ToString() + value4.ToString() + value5.ToString() + value6.ToString() + value7.ToString() + value8.ToString() + value9.ToString() + value10.ToString();
+            return id_client;
+        }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Environment.Exit(0);
@@ -39,7 +73,13 @@ namespace GoodRest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            string sql;
+            string sql2;
+            string sql3;
+            string sql4;
+            Client = new DataTable();
+            SqlConnection connection = null;
+            string idClient = null;
             //проверка на не пустоту поля
             Error.Text = "";
             if ((Email.Text == "") && (Login.Text == "") && (Password.Text == "") && (NewPassword.Text == ""))
@@ -69,19 +109,77 @@ namespace GoodRest
                 Error.Text = "Вы не ввели пароль повторно";
             }
             else
-
-
-            //Successful.Content = new SuccessfulRegistration();
-            if ((Successful.Content = new SuccessfulRegistration())!=null) 
+             if (!string.IsNullOrEmpty(Email.Text.Trim()))
             {
-                Button.IsEnabled = false;
-                Login.IsEnabled = false;
-                Email.IsEnabled = false;
-                Password.IsEnabled = false;
-                NewPassword.IsEnabled = false;
+                const string pattern = @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
+                var email = Email.Text.Trim().ToLowerInvariant();
+
+                if (Regex.Match(email, pattern).Success)
+                {
+
+                    MainWindow.login_ = Login.Text.Trim();
+                    MainWindow.email = Email.Text.Trim();
+                    MainWindow.password_ = Email.Text.Trim();
+                    sql2 = "Select * from Client where Email='" + MainWindow.email + "';";
+                    sql = "Select * from Client where Login='" + MainWindow.login_ + "';";
+                    //sql4 = "INSERT INTO Client(Id_Client,Email,Login,Password) VALUES ('"+idClient+"','"+MainWindow.email+"','"+MainWindow.login_+"','"+MainWindow.password_+"');";
+                    connection = new SqlConnection(connectionString);
+                    connection.Open();
+                    bool id = true;
+                    while (id)
+                    {
+                        idClient = Random_();
+                        sql3 = "Select * from Client where Id_Client='" + idClient + "';";
+                        SqlCommand command3 = new SqlCommand(sql3, connection);
+                        SqlDataReader reader3 = command3.ExecuteReader();
+                        while (reader3.Read())
+                        {
+                            id = true;
+                            return;
+                        }
+                        id = false;
+                        reader3.Close();
+                    }
+                    //connection = new SqlConnection(connectionString);
+                    sql4 = "INSERT INTO Client(Id_Client,Email,Login,Password,Role) VALUES ('" + idClient + "','" + MainWindow.email + "','" + MainWindow.login_ + "','" + MainWindow.password_ + "',1);";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Error.Text = "Такой логин уже существует";
+
+                        return;
+                    }
+                    reader.Close();
+                    SqlCommand command2 = new SqlCommand(sql2, connection);
+                    SqlDataReader reader2 = command2.ExecuteReader();
+                    while (reader2.Read())
+                    {
+                        Error.Text = "Эта почта уже использована другим пользователем";
+                        return;
+                    }
+                    reader2.Close();
+                    // connection.Close();
+                    Successful.Content = new SuccessfulRegistration();
+                    if ((Successful.Content = new SuccessfulRegistration()) != null)
+                    {
+                        SqlCommand command3 = new SqlCommand(sql4, connection);
+                        int num = command3.ExecuteNonQuery();
+                        Button.IsEnabled = false;
+                        Login.IsEnabled = false;
+                        Email.IsEnabled = false;
+                        Password.IsEnabled = false;
+                        NewPassword.IsEnabled = false;
+                        MainWindow.login_ = Login.Text.Trim();
+                        MainWindow.password_ = Password.Text.Trim();
+                        connection.Close();
+                    }
+                }
+
+                else
+                    Error.Text = "Неверно введена почта. Пример ввода почты: Ivanov@mail.ru";
             }
-
-
+            
         }
     }
 }
