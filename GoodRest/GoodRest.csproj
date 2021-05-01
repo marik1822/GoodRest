@@ -142,6 +142,9 @@
       <DependentUpon>ContactInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="DisableNavigation.cs" />
+    <Compile Include="EditingClient.xaml.cs">
+      <DependentUpon>EditingClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Greeting.xaml.cs">
       <DependentUpon>Greeting.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContactInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditingClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -367,6 +374,8 @@
     <Resource Include="icons8-отследить-отправление-через-мобильный-24.png" />
     <Resource Include="NOphoto.png" />
     <Content Include="Palm - 44399.mp4" />
+    <Resource Include="search_internet_16725.png" />
+    <Resource Include="poiskiturov.jpg" />
     <Content Include="Waves - 61950.mp4" />
     <Content Include="Звуки природы Star — Музыкотерапия.mp3" />
     <Resource Include="курорт1.jpg" />

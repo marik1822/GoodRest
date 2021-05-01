@@ -20,6 +20,7 @@ namespace GoodRest
     /// </summary>
     public partial class Tours : Window
     {
+       // public static Frame ToursFrame { get; set; }
         /// <summary>
         /// Переменная для города вылета
         /// </summary>
@@ -30,6 +31,7 @@ namespace GoodRest
             InitializeComponent();
             cityV = "Санкт-Петербург";
             LoginUser.Text = MainWindow.login_;
+            ToursFrame.NavigationService.Navigate(new EditingClient());
         }
         /// <summary>
         /// Кнопка выход
@@ -73,6 +75,8 @@ namespace GoodRest
         /// <param name="e"></param>
         private void LogOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            MainWindow.id_client = null;
+            MainWindow.role_ = null;
             new MainWindow().Show();
             Helper.CloseWindow(Window.GetWindow(this));
         }

@@ -1,0 +1,136 @@
+﻿<Page x:Class="GoodRest.EditingClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoodRest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1448" Height="823" 
+      ShowsNavigationUI="False"
+      Foreground="{x:Null}" Background="#99F0F0F0"
+      Title="EditingClient" Loaded="Page_Loaded">
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+
+                            <Border x:Name="border" CornerRadius="20" BorderBrush="Black" >
+                                <Border.Background>
+
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF5E70AE" Offset="1"/>
+                                        <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                                        <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox}" x:Key="TextBox1">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Label Content="Информация" HorizontalAlignment="Left" Height="59" Margin="596,0,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Фамилия:" HorizontalAlignment="Left" Height="36" Margin="47,127,0,0" VerticalAlignment="Top" Width="123" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.499,0.139"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Height="36" Margin="47,201,0,0" VerticalAlignment="Top" Width="64" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Отчество:" HorizontalAlignment="Left" Height="36" Margin="47,263,0,0" VerticalAlignment="Top" Width="110" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" Height="36" Margin="47,333,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Серия паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,398,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,467,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Пол:" HorizontalAlignment="Left" Height="36" Margin="47,533,0,0" VerticalAlignment="Top" Width="64" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label  Content=" Дата рождения:" HorizontalAlignment="Left" Height="36" Margin="47,600,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Button Name="ReadakInf" Style="{DynamicResource RoundCorner}"  Content="Изменить" HorizontalAlignment="Left" Margin="596,708,0,0" VerticalAlignment="Top" Width="270" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="44" Cursor="Hand" Click="ReadakInf_Click"  >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,127,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="Surname"   Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0"/>
+        </Border>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,201,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="Name"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0"/>
+        </Border>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,258,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="MiddleName"   Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0"/>
+        </Border>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,328,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="Phone" MaxLength="12"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0" TextInput="Phone_TextInput"/>
+        </Border>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,393,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="Seria" MaxLength="2"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0" TextInput="Seria_TextInput"/>
+        </Border>
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="486,462,0,0" VerticalAlignment="Top" Width="816" CornerRadius="20" Background="#FFEEEFEF">
+            <TextBox Name="Number" MaxLength="7"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="778"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473" Margin="18,9,0,0" TextInput="Number_TextInput"/>
+        </Border>
+        <CheckBox Name="M" Content="Мужской" HorizontalAlignment="Left" Margin="748,550,0,0" VerticalAlignment="Top" Foreground="#FF3C5F5F" FontSize="16" Checked="M_Checked"/>
+        <CheckBox x:Name="F" Content="Женский" HorizontalAlignment="Left" Margin="974,550,0,0" VerticalAlignment="Top" Foreground="#FF3C5F5F" FontSize="16" Checked="F_Checked"/>
+        <DatePicker Name="Date" HorizontalAlignment="Left" Margin="486,609,0,0" VerticalAlignment="Top" Width="816"/>
+        <TextBlock x:Name="Error" HorizontalAlignment="Left" Height="35" Margin="47,708,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="524" Foreground="#FFE81919" FontFamily="Microsoft YaHei UI"/>
+    </Grid>
+</Page>

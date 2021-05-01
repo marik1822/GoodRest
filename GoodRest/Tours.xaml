@@ -64,7 +64,7 @@
                 </Style>
             </Image.Style>
         </Image>
-        <Frame local:DisableNavigation.Disable="True"  Name="ToursFrame" HorizontalAlignment="Left" Height="823" Margin="240,151,0,0" VerticalAlignment="Top" Width="1448"/>
+        <Frame local:DisableNavigation.Disable="True"  x:Name="ToursFrame" HorizontalAlignment="Left" Height="823" Margin="240,151,0,0" VerticalAlignment="Top" Width="1448"/>
         <Label Content="Ваш регион:" HorizontalAlignment="Left" Height="28" Margin="845,94,0,0" VerticalAlignment="Top" Width="79" Foreground="#FF2D4F5B"/>
         <TextBlock Name="City"  Text="Санкт-Петербург" HorizontalAlignment="Left" Height="19" Margin="920,99,0,0" VerticalAlignment="Top" Width="108" Foreground="#FF2D4F5B"/>
         <Image Name="LogOut" HorizontalAlignment="Left" ToolTip="Выход из аккаунта" Height="30" Margin="1503,88,0,0" VerticalAlignment="Top" Width="36" Source="назад.png" Cursor="Hand" MouseLeftButtonDown="LogOut_MouseLeftButtonDown">

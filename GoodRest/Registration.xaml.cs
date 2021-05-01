@@ -119,7 +119,7 @@ namespace GoodRest
 
                     MainWindow.login_ = Login.Text.Trim();
                     MainWindow.email = Email.Text.Trim();
-                    MainWindow.password_ = Email.Text.Trim();
+                    MainWindow.password_ = Password.Text.Trim();
                     sql2 = "Select * from Client where Email='" + MainWindow.email + "';";
                     sql = "Select * from Client where Login='" + MainWindow.login_ + "';";
                     //sql4 = "INSERT INTO Client(Id_Client,Email,Login,Password) VALUES ('"+idClient+"','"+MainWindow.email+"','"+MainWindow.login_+"','"+MainWindow.password_+"');";
@@ -172,6 +172,17 @@ namespace GoodRest
                         NewPassword.IsEnabled = false;
                         MainWindow.login_ = Login.Text.Trim();
                         MainWindow.password_ = Password.Text.Trim();
+                        MainWindow.id_client = idClient;
+                        MainWindow.role_ = "";
+                        MainWindow.name_ = "";
+                        MainWindow.surname_ = "";
+                        MainWindow.id_client = "";
+                        MainWindow.seria = "";
+                        MainWindow.number ="";
+                        MainWindow.dayB = "";
+                        MainWindow.midleN = "";
+                        MainWindow.sex = "";
+                        MainWindow.phone ="";
                         connection.Close();
                     }
                 }

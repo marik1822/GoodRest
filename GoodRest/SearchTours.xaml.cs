@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace GoodRest
 {
@@ -20,9 +23,44 @@ namespace GoodRest
     /// </summary>
     public partial class SearchTours : Page
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        DataTable City;
         public SearchTours()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                //подключено БД
+            }
+            catch (SqlException)
+            {
+               //"Ошибка подключения БД!!!
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            string sql;
+            SqlConnection connection = null;
+            City = new DataTable();
+            sql = "SELECT Name_City from City;";
+            connection = new SqlConnection(connectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+            connection.Open();
+            
+            adapter.Fill(City);
+            for (int i=0; i < City.Rows.Count; i++)
+            {
+                Country.Items.Add(City.Rows[i]["Name_City"].ToString());
+            }
+           
+            connection.Close();
+            
+
         }
     }
 }

@@ -55,6 +55,14 @@ namespace GoodRest
         public static string surname_ { get; set; }
         public static string id_client { get; set; }
         public static string email { get; set; }
+        public static string seria { get; set; }
+        public static string number { get; set; }
+        public static string dayB { get; set; }
+        public static string midleN { get; set; }
+        public static string sex { get; set; }
+        public static string phone { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -109,7 +117,7 @@ namespace GoodRest
                 if (NoRobot.IsChecked == true)
             {
                 //string role;
-               sql = "SELECT login,password, Role,Name_,Surname,Id_Client from Client where ((Login='" + login_+"') and (Password='"+password_+"'))";
+               sql = "SELECT Id_Client, Series,Number_passport,Surname,Name_,Middle_name,Phone_number,Gender,Role,convert(varchar,Date_of_birth,106) from Client where (Login='"+login_+"')and(Password='"+password_+"');";
                sql2 = "SELECT login,password, Role from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
                // sql = "SELECT login,password, Role from Client where ((Login='marik') and (Password='marik'))";
                 connection = new SqlConnection(connectionString);
@@ -120,10 +128,19 @@ namespace GoodRest
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    role_ = reader[2].ToString();
-                    name_ = reader[3].ToString();
-                    surname_ = reader[4].ToString();
-                    id_client = reader[5].ToString();
+                    role_ = reader[8].ToString();
+                    name_ = reader[4].ToString();
+                    surname_ = reader[3].ToString();
+                    id_client = reader[0].ToString();
+                    seria= reader[1].ToString();
+                    number= reader[2].ToString();
+                    dayB=reader[9].ToString();
+                    midleN= reader[5].ToString();
+                    sex= reader[7].ToString();
+                    phone= reader[6].ToString();
+
+
+
                     new Greeting().Show();
                     this.Close();
                    // Error.Text = role_;

@@ -6,9 +6,40 @@
       xmlns:local="clr-namespace:GoodRest"
       mc:Ignorable="d"
       ShowsNavigationUI="False"
-     Title="ToursHome" Width="1448" Height="823" Foreground="{x:Null}" Background="#99F0F0F0" >
+     Title="ToursHome" Width="1448" Height="823" Foreground="{x:Null}" Background="#99F0F0F0" Loaded="Page_Loaded" >
 
     <Grid>
+        <ComboBox Name="Country" HorizontalAlignment="Left" Margin="144,366,0,0" VerticalAlignment="Top" Width="204" Height="30" BorderBrush="#FFFDF6F6" FontSize="16"/>
+        <DatePicker HorizontalAlignment="Left" Margin="498,366,0,0" VerticalAlignment="Top" Height="36" Width="254" FontSize="20"/>
+        <ComboBox Name="Col" HorizontalAlignment="Left" Margin="1008,366,0,0" VerticalAlignment="Top" Width="78" Height="30" BorderBrush="{x:Null}" FontSize="16">
+            <Button Content="1"  BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="2" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="3" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="4" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="5" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="6" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="7" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="8" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+            <Button Content="9" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="68"/>
+        </ComboBox>
+        <Label Content="Поиск тура" HorizontalAlignment="Left" Margin="549,49,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="72"/>
+        <Image HorizontalAlignment="Left" Height="56" Margin="1327,346,0,0" VerticalAlignment="Top" ToolTip="Поиск" Width="68" Source="поиск.png" Cursor="Hand">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Exit}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Label Content="Дата вылета:" HorizontalAlignment="Left" Margin="498,280,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36"/>
+        <Label Content="Количество путёвок:" HorizontalAlignment="Left" Margin="868,280,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36"/>
+        <Label Content="Курорт:" HorizontalAlignment="Left" Margin="166,280,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36" RenderTransformOrigin="0.504,0.517"/>
 
     </Grid>
 

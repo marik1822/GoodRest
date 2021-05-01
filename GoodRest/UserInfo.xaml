@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Width="1448" Height="823" 
       ShowsNavigationUI="False"
-      Title="UserInfo" Foreground="{x:Null}" Background="#99F0F0F0">
+      Title="UserInfo" Foreground="{x:Null}" Background="#99F0F0F0" Loaded="Page_Loaded">
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
@@ -70,12 +70,11 @@
         <Label Content="Информация" HorizontalAlignment="Left" Height="59" Margin="596,0,0,0" VerticalAlignment="Top" Width="309" Foreground="#FF2D4F5B" FontSize="36" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
         <Label Content="Фамилия:" HorizontalAlignment="Left" Height="36" Margin="47,127,0,0" VerticalAlignment="Top" Width="123" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.499,0.139"/>
         <Label Content="Имя:" HorizontalAlignment="Left" Height="36" Margin="47,201,0,0" VerticalAlignment="Top" Width="64" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="Отчество:" HorizontalAlignment="Left" Height="36" Margin="47,284,0,0" VerticalAlignment="Top" Width="110" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="Номер телефона:" HorizontalAlignment="Left" Height="36" Margin="47,354,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="Адрес электоронной почты:" HorizontalAlignment="Left" Height="36" Margin="47,422,0,0" VerticalAlignment="Top" Width="312" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="Серия паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,493,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Label Content="Номер паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,562,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
-        <Button Style="{DynamicResource RoundCorner}"  Content="Редактировать информацию" HorizontalAlignment="Left" Margin="596,708,0,0" VerticalAlignment="Top" Width="270" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="44" Cursor="Hand" >
+        <Label Content="Отчество:" HorizontalAlignment="Left" Height="36" Margin="47,263,0,0" VerticalAlignment="Top" Width="110" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" Height="36" Margin="47,333,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Серия паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,398,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Label Content="Номер паспорта:" HorizontalAlignment="Left" Height="36" Margin="47,467,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <Button Name="ReadakInf" Style="{DynamicResource RoundCorner}"  Content="Редактировать информацию" HorizontalAlignment="Left" Margin="596,708,0,0" VerticalAlignment="Top" Width="270" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="44" Cursor="Hand" Click="ReadakInf_Click" >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -87,6 +86,16 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <TextBlock Name="Surname" HorizontalAlignment="Left" Margin="170,132,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="519" Foreground="#FF2D5C78" FontSize="20"/>
+        <TextBlock Name="Name" HorizontalAlignment="Left" Margin="116,206,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="573" Foreground="#FF2D5C78" FontSize="20"/>
+        <TextBlock Name="MidleName" HorizontalAlignment="Left" Margin="170,268,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="519" Foreground="#FF2D5C78" FontSize="20"/>
+        <TextBlock Name="Phone" HorizontalAlignment="Left" Margin="244,338,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="445" Foreground="#FF2D5C78" FontSize="20"/>
+        <TextBlock Name="Ser" HorizontalAlignment="Left" Margin="239,403,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="450" Foreground="#FF2D5C78" FontSize="20"/>
+        <TextBlock Name="Number" HorizontalAlignment="Left" Margin="239,472,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="450" Foreground="#FF2D5C78" FontSize="20"/>
+        <Label Content="Пол:" HorizontalAlignment="Left" Height="36" Margin="47,533,0,0" VerticalAlignment="Top" Width="64" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <TextBlock Name="Sex" HorizontalAlignment="Left" Margin="116,538,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="573" Foreground="#FF2D5C78" FontSize="20"/>
+        <Label  Content=" Дата рождения:" HorizontalAlignment="Left" Height="36" Margin="47,600,0,0" VerticalAlignment="Top" Width="192" Foreground="#FF2D4F5B" FontSize="20" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderTransformOrigin="0.505,0.558"/>
+        <TextBlock Name="DayOfB" HorizontalAlignment="Left" Margin="239,605,0,0" TextWrapping="Wrap" Text="Информация отсутствует " VerticalAlignment="Top" Height="36" Width="450" Foreground="#FF2D5C78" FontSize="20"/>
 
     </Grid>
 </Page>
