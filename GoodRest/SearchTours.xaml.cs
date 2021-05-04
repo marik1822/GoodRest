@@ -23,9 +23,14 @@ namespace GoodRest
     /// </summary>
     public partial class SearchTours : Page
     {
+        public static string country { get; set; }
+        public static int col_pyt { get; set; }
+        public static string day { get; set; }
+
         string connectionString;
         SqlDataAdapter adapter;
         DataTable City;
+        DataTable Tour;
         public SearchTours()
         {
             InitializeComponent();
@@ -59,8 +64,55 @@ namespace GoodRest
             }
            
             connection.Close();
+            int s = 0;
+            for (int i=0; i <= 8; i++)
+            {
+                int n = i + 1;
+                string str = n.ToString();
+                Col.Items.Add(str);
+            }
             
 
         }
+
+        private void Serch_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+            country = Country.SelectedItem.ToString();
+             string  colP = Col.SelectedItem.ToString();
+            //Error.Text = colP;
+             col_pyt = int.Parse(colP);
+             day = Date.Text;
+            string sql2;
+            SqlConnection connection = null;
+            sql2 = "EXECUTE SearchTour @col="+ col_pyt + ",@city='"+ country + "',@cityV='"+Tours.cityV+"',@date='"+ day + "';";
+            connection = new SqlConnection(connectionString);
+            Tour = new DataTable();
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql2, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                this.NavigationService.Navigate(new SearchOutputTour());
+                return;
+            }
+            Error.Text = "По вашему запросу ничего не найдено";
+            
+            reader.Close();
+            connection.Close();
+        }
+
+        private void Page_KeyUp(object sender, KeyEventArgs e)
+        {
+          //  Cursor = Cursors.Wait;
+        }
+
+        private void Serch_KeyUp(object sender, KeyEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+        }
     }
 }
+
+

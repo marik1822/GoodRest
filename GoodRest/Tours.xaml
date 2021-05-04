@@ -21,10 +21,10 @@
 
             <MenuItem Header="         ТУРЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" >
                 <MenuItem Header="Туры по странам" >
-                    <MenuItem Header="ОАЭ"/>
-                    <MenuItem Header="Россия" />
-                    <MenuItem Header="Турция"/>
-                    <MenuItem Header="Египет" />
+                    <MenuItem Name="ARB" Header="ОАЭ" Click="ARB_Click" />
+                    <MenuItem Name="RUS" Header="Россия" Click="RUS_Click" />
+                    <MenuItem Name="TUR" Header="Турция" Click="TUR_Click"/>
+                    <MenuItem Name="EGP" Header="Египет" Click="EGP_Click" />
                 </MenuItem>
                 <MenuItem Header="Поиск тура" Click="MenuItem_Click_2" />
                 <Separator />

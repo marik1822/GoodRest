@@ -87,23 +87,11 @@
        
     </Page.Resources>
     <Grid>
-        <Button Style="{DynamicResource RoundCorner}"  Content="Вывести все мои заявки" HorizontalAlignment="Left" Margin="280,179,0,0" VerticalAlignment="Top" Width="196" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Cursor="Hand" Click="Button_Click"  >
-            <Button.Effect>
-                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
-            </Button.Effect>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5E70AE" Offset="1"/>
-                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
-                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="147,58,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="194,68,0,0" TextWrapping="Wrap" Text="Введите код заявки" VerticalAlignment="Top" Width="161" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=NumberApplications}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
-        <TextBox Name="NumberApplications"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="194,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
-        <Image HorizontalAlignment="Left" Height="20" Margin="159,68,0,0" VerticalAlignment="Top" Width="19" Source="icons8-отследить-отправление-через-мобильный-24.png"/>
-        <Image Name="Search1" HorizontalAlignment="Left" ToolTip="Поиск" Height="33" Margin="638,62,0,0" VerticalAlignment="Top" Width="41" Source="поиск.png" Cursor="Hand" MouseLeftButtonDown="Search1_MouseLeftButtonDown">
+        <Border BorderBrush="#FF939A9E" BorderThickness="1" HorizontalAlignment="Left" Height="41" Margin="147,108,0,0" VerticalAlignment="Top" Width="466" CornerRadius="20" Background="#FFEEEFEF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="194,118,0,0" TextWrapping="Wrap" Text="Введите код заявки" VerticalAlignment="Top" Width="161" Foreground="#FFB7B7B7"  Visibility="{Binding Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=NumberApplications}" Height="22" FontFamily="Microsoft YaHei UI" FontSize="14"/>
+        <TextBox Name="NumberApplications"  Style="{DynamicResource TextBox1}" HorizontalAlignment="Left" Height="23" Margin="194,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"  Background="{x:Null}" FontFamily="Microsoft YaHei" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"   Foreground="#FF30515D" RenderTransformOrigin="0.503,0.473"/>
+        <Image HorizontalAlignment="Left" Height="20" Margin="161,118,0,0" VerticalAlignment="Top" Width="19" Source="icons8-отследить-отправление-через-мобильный-24.png"/>
+        <Image Name="Search1" HorizontalAlignment="Left" ToolTip="Поиск" Height="33" Margin="636,113,0,0" VerticalAlignment="Top" Width="41" Source="поиск.png" Cursor="Hand" MouseLeftButtonDown="Search1_MouseLeftButtonDown">
             <Image.Effect>
                 <BlurEffect Radius="1" RenderingBias="Quality"/>
             </Image.Effect>
@@ -118,6 +106,6 @@
             </Image.Style>
         </Image>
         <Frame Name="FrameSearch1"  HorizontalAlignment="Left" Height="290" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="740"/>
-        <TextBlock  Name ="Error" HorizontalAlignment="Left" Margin="168,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" Foreground="#FFCF2626"/>
+        <TextBlock  Name ="Error" HorizontalAlignment="Left" Margin="147,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" Foreground="#FFCF2626"/>
     </Grid>
 </Page>

@@ -141,6 +141,9 @@
     <Compile Include="ContactInformation.xaml.cs">
       <DependentUpon>ContactInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountryTours.xaml.cs">
+      <DependentUpon>CountryTours.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DisableNavigation.cs" />
     <Compile Include="EditingClient.xaml.cs">
       <DependentUpon>EditingClient.xaml</DependentUpon>
@@ -160,6 +163,9 @@
     </Compile>
     <Compile Include="SearchApplications.xaml.cs">
       <DependentUpon>SearchApplications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOutputTour.xaml.cs">
+      <DependentUpon>SearchOutputTour.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchTours.xaml.cs">
       <DependentUpon>SearchTours.xaml</DependentUpon>
@@ -204,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CountryTours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditingClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchApplications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchOutputTour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

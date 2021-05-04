@@ -24,6 +24,7 @@ namespace GoodRest
         /// <summary>
         /// Переменная для города вылета
         /// </summary>
+        public static string Country { get; set; }
         public static string cityV { get; set; }
         //public string login1_;
         public Tours()
@@ -127,6 +128,30 @@ namespace GoodRest
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             ToursFrame.Content = new AllTour();
+        }
+
+        private void ARB_Click(object sender, RoutedEventArgs e)
+        {
+            Country = "ОАЭ";
+            ToursFrame.Content = new CountryTours();
+        }
+
+        private void RUS_Click(object sender, RoutedEventArgs e)
+        {
+            Country = "Россия";
+            ToursFrame.Content = new CountryTours();
+        }
+
+        private void TUR_Click(object sender, RoutedEventArgs e)
+        {
+            Country = "Турция";
+            ToursFrame.Content = new CountryTours();
+        }
+
+        private void EGP_Click(object sender, RoutedEventArgs e)
+        {
+            Country = "Египет";
+            ToursFrame.Content = new CountryTours();
         }
     }
 }
