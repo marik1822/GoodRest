@@ -61,6 +61,7 @@ namespace GoodRest
         public static string midleN { get; set; }
         public static string sex { get; set; }
         public static string phone { get; set; }
+        public static string id_emp { get; set; }
 
 
         public MainWindow()
@@ -118,7 +119,7 @@ namespace GoodRest
             {
                 //string role;
                sql = "SELECT Id_Client, Series,Number_passport,Surname,Name_,Middle_name,Phone_number,Gender,Role,convert(varchar,Date_of_birth,106) from Client where (Login='"+login_+"')and(Password='"+password_+"');";
-               sql2 = "SELECT login,password, Role from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
+               sql2 = "SELECT login,password, Role,Id_Employee from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
                // sql = "SELECT login,password, Role from Client where ((Login='marik') and (Password='marik'))";
                 connection = new SqlConnection(connectionString);
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -154,9 +155,10 @@ namespace GoodRest
                 while (reader2.Read())
                 {
                     role_ = reader2[2].ToString();
+                    id_emp =reader2[3].ToString();
                     new Greeting().Show();
                     this.Close();
-                    Error.Text = role_;
+                    //Error.Text = role_;
                     return;
                 }
                 reader2.Close();

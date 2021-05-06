@@ -129,6 +129,9 @@
     <Compile Include="Applications.xaml.cs">
       <DependentUpon>Applications.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationsTravelAgent.xaml.cs">
+      <DependentUpon>ApplicationsTravelAgent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChoiceActionsAdmin.xaml.cs">
       <DependentUpon>ChoiceActionsAdmin.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,9 @@
     </Compile>
     <Compile Include="ContactInformation.xaml.cs">
       <DependentUpon>ContactInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract.xaml.cs">
+      <DependentUpon>Contract.xaml</DependentUpon>
     </Compile>
     <Compile Include="CountryTours.xaml.cs">
       <DependentUpon>CountryTours.xaml</DependentUpon>
@@ -173,6 +179,9 @@
     <Compile Include="SuccessfulRegistration.xaml.cs">
       <DependentUpon>SuccessfulRegistration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TourInfo.xaml.cs">
+      <DependentUpon>TourInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tours.xaml.cs">
       <DependentUpon>Tours.xaml</DependentUpon>
     </Compile>
@@ -194,6 +203,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ApplicationsTravelAgent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChoiceActionsAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContactInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contract.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SuccessfulRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TourInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -379,6 +400,7 @@
     <Resource Include="почта.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Фон_Кнопки.png" />
     <Resource Include="Шарм-эль-шейх Надпись.jpg" />
     <Resource Include="ХургадаНадпись.jpg" />
     <Resource Include="карта2.PNG" />

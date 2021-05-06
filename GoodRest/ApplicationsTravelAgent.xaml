@@ -1,0 +1,135 @@
+﻿<Window x:Class="GoodRest.ApplicationsTravelAgent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodRest"
+        mc:Ignorable="d"
+         WindowState="Maximized"
+        WindowStyle="None" 
+        Icon="логотип.png"   
+        Title="ApplicationsTravelAgent" Height="1080" Width="1920" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+
+                            <Border x:Name="border" CornerRadius="20" BorderBrush="Black" >
+                                <Border.Background>
+
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF5E70AE" Offset="1"/>
+                                        <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                                        <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextElement.FontWeight="Bold"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="фон для туров.png"/>
+    </Window.Background>
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="931" Margin="55,83,0,0" VerticalAlignment="Top" Width="1807" Background="#B2F5F0F0"/>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True"  Name="App" HorizontalAlignment="Left" Height="863" Margin="55,151,0,0" VerticalAlignment="Top" Width="1807">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код заявки" Binding="{Binding Id_Application}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Код тура" Binding="{Binding Id_Tour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Код клиента" Binding="{Binding Id_Client}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name_}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Middle_name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Серия паспорта" Binding="{Binding Series}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер паспорта" Binding="{Binding Number_passport}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Date_of_birth}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Phone_number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество путёвок" Binding="{Binding Number_Of_Trips}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество взрослых" Binding="{Binding Number_Of_People}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество детей" Binding="{Binding Number_Of_Children}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование тура" Binding="{Binding Name_Tour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование отеля" Binding="{Binding Name_Hotel}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата заявки" Binding="{Binding Submission_Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус заявки" Binding="{Binding _Status }"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Oform" Content="Оформить договор" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image HorizontalAlignment="Left" x:Name="Exit" ToolTip="Выход" Height="33" Margin="1803,97,0,0" VerticalAlignment="Top" Width="34" Source="выключение.png" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Exit}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Image HorizontalAlignment="Left" x:Name="Back" ToolTip="Назад" Height="28" Margin="1757,97,0,0" VerticalAlignment="Top" Width="28" Source="назад стрелка.png" Cursor="Hand" MouseLeftButtonDown="Back_MouseLeftButtonDown">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=Back}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Button Name="Akt_apl" Content="Актуальные заявки" HorizontalAlignment="Left" Margin="55,83,0,0" VerticalAlignment="Top" Width="233" Height="68" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C" Click="Akt_apl_Click" Cursor="Hand"/>
+        <Button Name="Oform_apl" Content="Оформленные заявки" HorizontalAlignment="Left" Margin="288,83,0,0" VerticalAlignment="Top" Width="250" Height="68" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C" Click="Oform_apl_Click" Cursor="Hand"/>
+        <Button Name="All_apl" Content="Все заявки" HorizontalAlignment="Left" Margin="543,83,0,0" VerticalAlignment="Top" Width="250" Height="68" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C" Click="All_apl_Click" Cursor="Hand"/>
+        <Button x:Name="Dock" Content="Договоры" HorizontalAlignment="Left" Margin="798,83,0,0" VerticalAlignment="Top" Width="250" Height="68" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C" Click="Dock_Click" Cursor="Hand"/>
+        <Frame NavigationUIVisibility="Hidden"  Name="Aplic" HorizontalAlignment="Left" Height="863" Margin="55,151,0,0" VerticalAlignment="Top" Width="1807"/>
+
+    </Grid>
+</Window>

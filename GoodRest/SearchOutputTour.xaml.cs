@@ -26,7 +26,7 @@ namespace GoodRest
     {
         static string connectionString;
         SqlDataAdapter adapter;
-       static DataTable Tour;
+        static DataTable Tour;
         public SearchOutputTour()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace GoodRest
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+
             string sql2;
             //SqlConnection connection = null;
             sql2 = "EXECUTE SearchTour @col=" + SearchTours.col_pyt + ",@city='" + SearchTours.country + "',@cityV='" + Tours.cityV + "',@date='" + SearchTours.day + "';";
@@ -78,6 +78,41 @@ namespace GoodRest
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {
             Cursor = Cursors.Wait;
+        }
+
+        private void LViewTours_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+        }
+
+        private void LViewTours_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string v = LViewTours.SelectedIndex.ToString();
+            int n = int.Parse(v);
+            n++;
+            string sql2;
+            SqlConnection connection = null;
+            sql2 = "SELECT Photo, Name_Tour, Cost_Adult, Number_Of_Trips, Date_Start_Tour, Id_Tour,row_number() over(ORDER BY SearchToursV.Id_Tour)  num from SearchToursV where((SearchToursV.Number_Of_Trips-" + SearchTours.col_pyt + ")>= 0 ) AND(Departure_City = '" + Tours.cityV + "') AND(Name_City = '" + SearchTours.country + "') AND(Date_Start_Tour = '" + SearchTours.day + "') AND (num="+n+") ;";
+            connection = new SqlConnection(connectionString);
+            Tour = new DataTable();
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql2, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            int i = 1;
+            while (reader.Read())
+            {
+                CountryTours.id_t = reader[5].ToString();
+                this.NavigationService.Navigate(new TourInfo());
+                //this.NavigationService.Navigate(new SearchOutputTour());
+                return;
+            }
+            //Error.Text = "По вашему запросу ничего не найдено";
+
+            reader.Close();
+            connection.Close();
+
+
         }
     }
 }

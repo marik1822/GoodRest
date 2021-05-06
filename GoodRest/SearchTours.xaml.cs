@@ -85,7 +85,8 @@ namespace GoodRest
              day = Date.Text;
             string sql2;
             SqlConnection connection = null;
-            sql2 = "EXECUTE SearchTour @col="+ col_pyt + ",@city='"+ country + "',@cityV='"+Tours.cityV+"',@date='"+ day + "';";
+            sql2 = "EXEC SearchTour @col="+col_pyt+",@city='"+country+"',@cityV='"+Tours.cityV+"',@date='"+day+"';";
+           // sql2 = "EXECUTE SearchTour @col="+ col_pyt + ",@city='"+ country + "',@cityV='"+Tours.cityV+"',@date='"+ day + "';";
             connection = new SqlConnection(connectionString);
             Tour = new DataTable();
             connection = new SqlConnection(connectionString);
@@ -94,6 +95,7 @@ namespace GoodRest
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
+               // CountryTours.id_t = reader[5].ToString();
                 this.NavigationService.Navigate(new SearchOutputTour());
                 return;
             }

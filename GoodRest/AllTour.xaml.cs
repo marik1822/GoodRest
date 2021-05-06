@@ -76,5 +76,57 @@ namespace GoodRest
             }
             
         }
+
+        private void LViewTours_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           string  v = LViewTours.SelectedIndex.ToString();
+            int n = int.Parse(v);
+            n++;
+            if (Tours.cityV == "Москва") {
+                string sql2;
+                SqlConnection connection = null;
+                sql2 = "SELECT * from AllTourMoscow where num=" + n + ";";
+                connection = new SqlConnection(connectionString);
+                Tour = new DataTable();
+                connection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(sql2, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                int i = 1;
+                while (reader.Read())
+                {
+                    CountryTours.id_t = reader[5].ToString();
+                    this.NavigationService.Navigate(new TourInfo());
+                    return;
+                }
+
+                reader.Close();
+                connection.Close();
+            }else 
+            if (Tours.cityV == "Санкт-Петербург")
+            {
+                string sql2;
+                SqlConnection connection = null;
+                sql2 = "SELECT * from AllTourPiter where num=" + n + ";";
+                connection = new SqlConnection(connectionString);
+                Tour = new DataTable();
+                connection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(sql2, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                int i = 1;
+                while (reader.Read())
+                {
+                    CountryTours.id_t = reader[5].ToString();
+                    this.NavigationService.Navigate(new TourInfo());
+                    return;
+                }
+
+                reader.Close();
+                connection.Close();
+
+            }
+
+        }
     }
 }

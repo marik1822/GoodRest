@@ -29,5 +29,17 @@ namespace GoodRest
         {
             Environment.Exit(0);
         }
+
+        private void Application_Click(object sender, RoutedEventArgs e)
+        {
+            new ApplicationsTravelAgent().Show();
+            Helper.CloseWindow(Window.GetWindow(this)); ;
+        }
+
+        private void Tour_Click(object sender, RoutedEventArgs e)
+        {
+            new Tours().Show();
+            Helper.CloseWindow(Window.GetWindow(this)); ;
+        }
     }
 }
