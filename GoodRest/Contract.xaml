@@ -9,7 +9,7 @@
       Title="Contract" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid AutoGenerateColumns="False" IsReadOnly="True"  Name="App" HorizontalAlignment="Left" Height="863" VerticalAlignment="Top" Width="1807">
+        <DataGrid    AutoGenerateColumns="False" IsReadOnly="True"  Name="App" HorizontalAlignment="Left" Height="863" VerticalAlignment="Top" Width="1807">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Код договора" Binding="{Binding Id_Сontract }"></DataGridTextColumn>
                 <DataGridTextColumn Header="Код заявки" Binding="{Binding Id_Application }"></DataGridTextColumn>
@@ -23,7 +23,15 @@
                 <DataGridTextColumn Header="Итоговая цена" Binding="{Binding Final_Price }"></DataGridTextColumn>
                 <DataGridTextColumn Header="Город вылета" Binding="{Binding Departure_City }"></DataGridTextColumn>
                 <DataGridTextColumn Header="Дата оформления договора" Binding="{Binding Date_registration }"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Oform" Content="Экспорт в Word" Click="Oform_Click" Cursor="Hand" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock Name="Error" HorizontalAlignment="Left" Margin="27,812,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="29" Width="1112" Foreground="#FFE62222" FontSize="18"/>
     </Grid>
 </Page>

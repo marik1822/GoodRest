@@ -108,5 +108,14 @@ namespace GoodRest
         {
             Aplic.Content = new Contract();
         }
+
+        private void Oform_Click(object sender, RoutedEventArgs e)
+        {
+           string ID_Aplication = Tour.Rows[App.SelectedIndex]["Id_Application"].ToString().Trim();
+           string Date = DateTime.Now.ToString();
+            Date = Date.Substring(0, Date.LastIndexOf(' ') + 1);
+            Error.Text = Date;
+            
+        }
     }
 }
