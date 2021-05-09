@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace GoodRest
 {
     /// <summary>
@@ -25,7 +26,12 @@ namespace GoodRest
         static string connectionString;
         SqlDataAdapter adapter;
         static DataTable Tour;
+        public static float Sale { get; set; }
+        public static string Date { get; set; }
+        public static string ID_Aplication { get; set; }
+        public static float Cost { get; set; }
 
+        public static int Col_People { get; set; }
         public ApplicationsTravelAgent()
         {
             InitializeComponent();
@@ -111,11 +117,22 @@ namespace GoodRest
 
         private void Oform_Click(object sender, RoutedEventArgs e)
         {
-           string ID_Aplication = Tour.Rows[App.SelectedIndex]["Id_Application"].ToString().Trim();
-           string Date = DateTime.Now.ToString();
-            Date = Date.Substring(0, Date.LastIndexOf(' ') + 1);
-            Error.Text = Date;
-            
+           ID_Aplication = Tour.Rows[App.SelectedIndex]["Id_Application"].ToString().Trim();
+           string Status = Tour.Rows[App.SelectedIndex]["_Status"].ToString();
+           Cost =float.Parse(Tour.Rows[App.SelectedIndex]["Cost_Adult"].ToString().Trim());
+           Col_People = int.Parse( Tour.Rows[App.SelectedIndex]["Number_Of_People"].ToString());
+            if (Status == "в обработке")
+            {
+                
+                Date = DateTime.Now.ToString();
+                Date = Date.Substring(0, Date.LastIndexOf(' ') + 1);
+                //Error.Text = Date;
+                Aplic.Content = new ContractOFORM();
+               // Error.Text = Sale;
+          
+                
+            }
+         
         }
     }
 }

@@ -70,11 +70,9 @@ namespace GoodRest
         }
 
         private void Oform_Click(object sender, RoutedEventArgs e)
-        {
-           // Error.Text = "";
-              var application = new Word.Application();
+        {       
+             var application = new Word.Application();
              Word.Document document = application.Documents.Add();
-            // Error.Text ="Договор экспортирован";
             MessageBox.Show("Договор экспортирован в Word");
             var row = (DataGridRow)App.ItemContainerGenerator.ContainerFromIndex(App.SelectedIndex);
             string FIO = Contracts.Rows[App.SelectedIndex]["Surname"].ToString().Trim()+" "+ Contracts.Rows[App.SelectedIndex]["Name_"].ToString().Trim()+" "+ Contracts.Rows[App.SelectedIndex]["Middle_name"].ToString().Trim();
