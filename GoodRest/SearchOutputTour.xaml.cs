@@ -77,42 +77,42 @@ namespace GoodRest
 
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {
-            Cursor = Cursors.Wait;
+           // Cursor = Cursors.Wait;
         }
 
         private void LViewTours_Unloaded(object sender, RoutedEventArgs e)
         {
-            Cursor = Cursors.Wait;
+         //   Cursor = Cursors.Wait;
         }
 
         private void LViewTours_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string v = LViewTours.SelectedIndex.ToString();
-            int n = int.Parse(v);
-            n++;
-            string sql2;
-            SqlConnection connection = null;
-            sql2 = "SELECT Photo, Name_Tour, Cost_Adult, Number_Of_Trips, Date_Start_Tour, Id_Tour,row_number() over(ORDER BY SearchToursV.Id_Tour)  num from SearchToursV where((SearchToursV.Number_Of_Trips-" + SearchTours.col_pyt + ")>= 0 ) AND(Departure_City = '" + Tours.cityV + "') AND(Name_City = '" + SearchTours.country + "') AND(Date_Start_Tour = '" + SearchTours.day + "') AND (num="+n+") ;";
-            connection = new SqlConnection(connectionString);
-            Tour = new DataTable();
-            connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql2, connection);
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            int i = 1;
-            while (reader.Read())
-            {
-                CountryTours.id_t = reader[5].ToString();
-                this.NavigationService.Navigate(new TourInfo());
-                //this.NavigationService.Navigate(new SearchOutputTour());
-                return;
-            }
-            //Error.Text = "По вашему запросу ничего не найдено";
+           // string v = LViewTours.SelectedIndex.ToString();
+           // string id_tour= Tour.Rows[LViewTours.SelectedIndex][""].ToString().Trim();
+            // n++;
+            /*  string sql2;
+              SqlConnection connection = null;
+              sql2 = "";
+              connection = new SqlConnection(connectionString);
+              Tour = new DataTable();
+              connection = new SqlConnection(connectionString);
+              SqlCommand command = new SqlCommand(sql2, connection);
+              connection.Open();
+              SqlDataReader reader = command.ExecuteReader();
+              int i = 1;
+              while (reader.Read())
+              {
+                  CountryTours.id_t = reader[5].ToString();
+                  this.NavigationService.Navigate(new TourInfo());
+                  //this.NavigationService.Navigate(new SearchOutputTour());
+                  return;
+              }
+              //Error.Text = "По вашему запросу ничего не найдено";
 
-            reader.Close();
-            connection.Close();
-
-
+              reader.Close();
+              connection.Close();*/
+            CountryTours.id_t= Tour.Rows[LViewTours.SelectedIndex]["Id_Tour"].ToString().Trim();
+            this.NavigationService.Navigate(new TourInfo());
         }
     }
 }

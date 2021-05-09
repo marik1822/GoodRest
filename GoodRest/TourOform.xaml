@@ -1,0 +1,91 @@
+﻿<Page x:Class="GoodRest.TourOform"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoodRest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1448" Height="823" 
+      ShowsNavigationUI="False"
+       Foreground="{x:Null}" Background="#99F0F0F0"
+      Title="TourOform" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+
+                            <Border x:Name="border" CornerRadius="20" BorderBrush="Black" >
+                                <Border.Background>
+
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF5E70AE" Offset="1"/>
+                                        <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                                        <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextElement.FontWeight="Bold"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <ComboBox Name="Employer" HorizontalAlignment="Left" Margin="177,252,0,0" VerticalAlignment="Top" Width="324" SelectionChanged="Employer_SelectionChanged"/>
+        <ComboBox x:Name="PeopleCol" HorizontalAlignment="Left" Margin="700,252,0,0" VerticalAlignment="Top" Width="70" SelectionChanged="PeopleCol_SelectionChanged"/>
+        <ComboBox x:Name="ChildCol" HorizontalAlignment="Left" Margin="988,252,0,0" VerticalAlignment="Top" Width="66" SelectionChanged="ChildCol_SelectionChanged"/>
+        <Label Content="Оформление заявки" HorizontalAlignment="Left" Margin="584,10,0,0" VerticalAlignment="Top" Foreground="#FF2F5359" FontSize="36" RenderTransformOrigin="0.564,0.483"/>
+        <Label Content="Турагент:" HorizontalAlignment="Left" Margin="270,195,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2F5B74" FontSize="18" Width="106"/>
+        <Label Content="Количество взрослых:" HorizontalAlignment="Left" Margin="636,195,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2F5B74" FontSize="18" Width="198"/>
+        <Label Content="Количество детей:" HorizontalAlignment="Left" Margin="934,195,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2F5B74" FontSize="18" Width="198"/>
+        <Button Style="{DynamicResource RoundCorner}"  Content="Оформить" HorizontalAlignment="Left" Margin="1218,471,0,0" VerticalAlignment="Top" Width="194" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="45" Click="Button_Click" Cursor="Hand"  >
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5E70AE" Offset="1"/>
+                    <GradientStop Color="#FF69D8CE" Offset="0.218"/>
+                    <GradientStop Color="#FF9FE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>

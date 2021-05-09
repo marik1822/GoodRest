@@ -99,8 +99,8 @@ namespace GoodRest
                 this.NavigationService.Navigate(new SearchOutputTour());
                 return;
             }
-            Error.Text = "По вашему запросу ничего не найдено";
-            
+            MessageBox.Show("По вашему запросу ничего не найдено");
+
             reader.Close();
             connection.Close();
         }
@@ -112,7 +112,7 @@ namespace GoodRest
 
         private void Serch_KeyUp(object sender, KeyEventArgs e)
         {
-            Cursor = Cursors.Wait;
+          //  Cursor = Cursors.Wait;
         }
     }
 }

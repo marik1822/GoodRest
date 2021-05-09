@@ -153,5 +153,10 @@ namespace GoodRest
             Country = "Египет";
             ToursFrame.Content = new CountryTours();
         }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            ToursFrame.Content = new AboutUs();
+        }
     }
 }

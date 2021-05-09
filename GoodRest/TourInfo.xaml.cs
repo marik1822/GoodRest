@@ -72,80 +72,13 @@ namespace GoodRest
             sql = "EXEC TourInfo @ID='"+CountryTours.id_t+"';";
             DataTable Tour = ExecuteSql(sql);
             List.ItemsSource = Tour.DefaultView;
-            //DataTable Tour = ExecuteSql(sql);
-            /*connection = new SqlConnection(connectionString);
-            Tour = new DataTable();
-            connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(sql, connection);
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                Name_T.Text = reader[7].ToString();
-                Name_H.Text = reader[1].ToString();
-                Star.Value = int.Parse(reader[2].ToString());
-                typeP.Text = "Тип питания: "+reader[4].ToString();
-                DayV.Text = "Дата вылета: "+reader[9].ToString();
-                ColN.Text = "Количество ночей: "+reader[10].ToString();
-                Cost.Text = reader[8].ToString()+" РУБ";
-                Opis.Text = reader[3].ToString();
-                // Pat.Source = reader[5];
-                Opis.Text = reader[5].ToString();
-                return;
-            }*/
+            
 
-            /*   int n = int.Parse(CountryTours.v);
-               n++;
-               if ((Tours.Country == "Египет") && (Tours.cityV == "Санкт-Петербург"))
-               {
-                   string sql2;
-                   SqlConnection connection = null;
-                   sql2 = "SELECT * from EGP_Tour_Piter where num=" + n + ";";
-                   connection = new SqlConnection(connectionString);
-                   Tour = new DataTable();
-                   connection = new SqlConnection(connectionString);
-                   SqlCommand command = new SqlCommand(sql2, connection);
-                   connection.Open();
-                   SqlDataReader reader = command.ExecuteReader();
-                   int i = 1;
-                   while (reader.Read())
-                   {
-                       id_t = reader[5].ToString();
-                       Error.Text = reader[1].ToString();
+        }
 
-                       //this.NavigationService.Navigate(new SearchOutputTour());
-                       return;
-                   }
-                   //Error.Text = "По вашему запросу ничего не найдено";
-
-                   reader.Close();
-                   connection.Close();
-               }else
-               if ((Tours.Country == "Турция") && (Tours.cityV == "Санкт-Петербург"))
-               {
-
-               }else
-               if ((Tours.Country == "ОАЭ") && (Tours.cityV == "Санкт-Петербург"))
-               {
-
-               }
-               if ((Tours.Country == "Египет") && (Tours.cityV == "Москва"))
-               {
-
-               }
-               if ((Tours.Country == "Турция") && (Tours.cityV == "Москва"))
-               {
-
-               }
-               if ((Tours.Country == "Россия") && (Tours.cityV == "Москва"))
-               {
-
-               }
-               if ((Tours.Country == "ОАЭ") && (Tours.cityV == "Москва"))
-               {
-
-               }*/
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new TourOform());
         }
     }
 }

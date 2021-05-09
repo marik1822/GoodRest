@@ -120,6 +120,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AllTour.xaml.cs">
       <DependentUpon>AllTour.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,9 @@
     <Compile Include="TourInfo.xaml.cs">
       <DependentUpon>TourInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TourOform.xaml.cs">
+      <DependentUpon>TourOform.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tours.xaml.cs">
       <DependentUpon>Tours.xaml</DependentUpon>
     </Compile>
@@ -195,6 +201,10 @@
       <DependentUpon>UserInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="WordHelper.cs" />
+    <Page Include="AboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AllTour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TourInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TourOform.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -411,6 +425,11 @@
     <Resource Include="почта.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ОНас5.jpg" />
+    <Resource Include="ОНас4.PNG" />
+    <Resource Include="ОНас3.PNG" />
+    <Resource Include="ОНас2.PNG" />
+    <Resource Include="ОНас1.PNG" />
     <Resource Include="Фон_Кнопки.png" />
     <Resource Include="Шарм-эль-шейх Надпись.jpg" />
     <Resource Include="ХургадаНадпись.jpg" />

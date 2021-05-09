@@ -1,0 +1,31 @@
+﻿<Page x:Class="GoodRest.AboutUs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoodRest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1448" Height="823" Foreground="{x:Null}" Background="#99F0F0F0"
+      Title="AboutUs">
+
+    <Grid>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="473" Margin="10,136,0,0" VerticalAlignment="Top" Width="1428" Background="White">
+            <TextBlock Text="Туристическое агентство GoodRest поможет Вам получить незабываемые впечатления и отдохнуть на все 100%! Яркое солнце, теплый песок, ласково шумящие волны… или бескрайние просторы, горные вершины, захватывающие дух… или далекие города с удивительной культурой и архитектурой… Вам открыты все направления, перед Вами целый мир. Куда отправиться на этот раз? Выбор за Вами!" HorizontalAlignment="Left" x:Name="DescripResort" TextWrapping="Wrap"  VerticalAlignment="Top" Foreground="#FF88B9D8" Height="458" Width="778" FontSize="20" Margin="649,9,-1,0" />
+        </Border>
+
+        <Label Content="Добро пожаловать в турагенство GOODREST" HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Foreground="#FF336664" FontSize="48" FontStyle="Italic"/>
+        <Image HorizontalAlignment="Left" Height="84" Margin="1316,0,0,0" VerticalAlignment="Top" Width="88" Source="логотип.png"/>
+        <Image HorizontalAlignment="Left" Height="84" Margin="48,0,0,0" VerticalAlignment="Top" Width="88" Source="логотип.png"/>
+        <Image HorizontalAlignment="Left" Height="74" Margin="705,363,0,0" VerticalAlignment="Top" Width="90" Source="ОНас1.PNG"/>
+        <Image HorizontalAlignment="Left" Height="92" Margin="874,356,0,0" VerticalAlignment="Top" Width="86" Source="ОНас2.PNG"/>
+        <Image HorizontalAlignment="Left" Height="79" Margin="1058,358,0,0" VerticalAlignment="Top" Width="100" Source="ОНас3.PNG"/>
+        <Image HorizontalAlignment="Left" Height="81" Margin="1254,356,0,0" VerticalAlignment="Top" Width="100" Source="ОНас4.PNG"/>
+        <TextBlock Text="Мы сотрудничаем только с надежными партнёрами и туроператорами, которые гарантируют туристам качественный отдых" HorizontalAlignment="Left" Margin="680,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF44ACCB" Height="112" Width="160"/>
+        <TextBlock Text="В агентствах сети «GoodRest» работают опытные консультанты, которые подберут для вас оптимальный тур по выгодной цене" HorizontalAlignment="Left" Margin="860,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF44ACCB" Height="112" Width="159"/>
+        <TextBlock Text="В офисах продаж нашей сети вы можете оплатить тур любым способом, а также оформить туры в кредит или в рассрочку" HorizontalAlignment="Left" Margin="1043,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF44ACCB" Height="112" Width="159"/>
+        <TextBlock Text="Удобное расположение офисов продаж." HorizontalAlignment="Left" Margin="1230,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF44ACCB" Height="52" Width="174"/>
+        <Image HorizontalAlignment="Left" Height="358" Margin="25,180,0,0" VerticalAlignment="Top" Width="603" Source="ОНас5.jpg"/>
+
+    </Grid>
+</Page>

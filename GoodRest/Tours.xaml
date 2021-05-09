@@ -17,7 +17,7 @@
 
         <Menu Height="51" VerticalAlignment="Top" Margin="240,80,229.8,0" Background="#B2F0F0F0">
             <MenuItem Name="Main" Header="       ГЛАВНАЯ" Foreground="#FF2D4F60" Height="53" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" Click="Main_Click" />
-            <MenuItem Header="  О КОМПАНИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" />
+            <MenuItem Header="  О КОМПАНИИ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" Click="MenuItem_Click_4" />
 
             <MenuItem Header="         ТУРЫ" Foreground="#FF2D4F5B" Width="150" FontFamily="Microsoft YaHei UI" FontSize="16" Cursor="Hand" >
                 <MenuItem Header="Туры по странам" >
