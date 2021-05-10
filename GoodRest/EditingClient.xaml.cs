@@ -132,37 +132,38 @@ namespace GoodRest
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.surname_ != "")
-            {
-                Surname.Text = MainWindow.surname_;
-            }
-            if (MainWindow.name_!="")
-            {
-                Name.Text = MainWindow.name_;
-            }
-            if (MainWindow.midleN != "")
-            {
-                MiddleName.Text = MainWindow.midleN;
-            }
-            if (MainWindow.phone!="")
-            {
-                
-                Phone.Text = MainWindow.phone;
-            }
-            if (MainWindow.seria!="")
-            {
-                Seria.Text = MainWindow.seria;
-            }
-            if (MainWindow.number!="")
-            {
-                Number.Text = MainWindow.number;
-            }
-            
-            if (MainWindow.dayB != "")
-            {
+           
+                if (MainWindow.surname_ != "")
+                {
+                    Surname.Text = MainWindow.surname_;
+                }
+                if (MainWindow.name_ != "")
+                {
+                    Name.Text = MainWindow.name_;
+                }
+                if (MainWindow.midleN != "")
+                {
+                    MiddleName.Text = MainWindow.midleN;
+                }
+                if (MainWindow.phone != "")
+                {
 
-                Date.SelectedDate = DateTime.Parse(MainWindow.dayB);
-            }
+                    Phone.Text = MainWindow.phone;
+                }
+                if (MainWindow.seria != "")
+                {
+                    Seria.Text = MainWindow.seria;
+                }
+                if (MainWindow.number != "")
+                {
+                    Number.Text = MainWindow.number;
+                }
+
+                if (MainWindow.dayB != "")
+                {
+
+                    Date.SelectedDate = DateTime.Parse(MainWindow.dayB);
+                }
                 if (MainWindow.sex.Trim().ToLower() == "ж")
                 {
                     F.IsChecked = true;

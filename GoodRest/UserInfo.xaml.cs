@@ -79,8 +79,11 @@ namespace GoodRest
 
         private void ReadakInf_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new EditingClient());
-
+            if (MainWindow.role_ == "1")
+            {
+                this.NavigationService.Navigate(new EditingClient());
+            }
+            else MessageBox.Show("Вы не являетесь клиентом");
         }
     }
 }

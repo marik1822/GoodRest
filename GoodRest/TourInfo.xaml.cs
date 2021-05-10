@@ -78,7 +78,11 @@ namespace GoodRest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new TourOform());
+            if (MainWindow.role_ == "1")
+            {
+                this.NavigationService.Navigate(new TourOform());
+            }
+            else  MessageBox.Show("Вы не являетесь клиентом");
         }
     }
 }
