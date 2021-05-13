@@ -1,0 +1,37 @@
+﻿<Page x:Class="GoodRest.PhotoHotelAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoodRest"
+      mc:Ignorable="d" 
+      d:DesignHeight="861" d:DesignWidth="1807"
+      Background="#7FFBFBFB"
+      Title="PhotoHotelAdd" Loaded="Page_Loaded">
+
+    <Grid>
+        <Label Content="Загрузка фото отелей" HorizontalAlignment="Left" Margin="567,10,0,0" VerticalAlignment="Top" Foreground="#FF3C5952" FontSize="72"/>
+        <ComboBox Name="ID_H" HorizontalAlignment="Left" Margin="140,404,0,0" VerticalAlignment="Top" Width="181"/>
+        <TextBox Name="PathP" HorizontalAlignment="Left" Height="21" Margin="654,404,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="486" Foreground="#FF44646D"/>
+        <Label Content="Код отеля:" HorizontalAlignment="Left" Margin="140,308,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36" RenderTransformOrigin="0.504,0.517"/>
+        <Label Content="Полный путь к фотографии:" HorizontalAlignment="Left" Margin="654,308,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36" RenderTransformOrigin="0.504,0.517"/>
+        <Image Name="Add" ToolTip="Загрузить" HorizontalAlignment="Left" Height="66" Margin="870,623,0,0" VerticalAlignment="Top" Width="65" Source="Button_Upload-01_25119.png" Cursor="Hand" MouseLeftButtonDown="Add_MouseLeftButtonDown">
+            <Image.Effect>
+                <BlurEffect Radius="1" RenderingBias="Quality"/>
+            </Image.Effect>
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver,ElementName=Add}" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <ComboBox Name="Role" HorizontalAlignment="Left" Margin="1399,404,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label Content="Роль фото:" HorizontalAlignment="Left" Margin="1385,308,0,0" VerticalAlignment="Top" Foreground="#FF446366" FontSize="36" RenderTransformOrigin="0.504,0.517"/>
+        <Label Content="Пример ввода пути: C:\Users\orvis\Desktop\фото1.jpg" HorizontalAlignment="Left" Margin="654,430,0,0" VerticalAlignment="Top" Width="486" Foreground="#FF7A7A7A" FontSize="16" Background="{x:Null}"/>
+
+    </Grid>
+</Page>

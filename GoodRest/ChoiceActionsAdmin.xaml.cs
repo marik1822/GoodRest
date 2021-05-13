@@ -29,5 +29,25 @@ namespace GoodRest
         {
             Environment.Exit(0);
         }
+        /// <summary>
+        /// Кнопка "добавить данные"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new ChangeAdmin().Show();
+            Helper.CloseWindow(Window.GetWindow(this));
+        }
+        /// <summary>
+        /// Кнопка просмотра туров
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new Tours().Show();
+            Helper.CloseWindow(Window.GetWindow(this)); 
+        }
     }
 }

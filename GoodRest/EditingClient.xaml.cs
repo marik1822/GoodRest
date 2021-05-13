@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace GoodRest
 {
@@ -41,12 +42,13 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                Error.Text = "Ошибка подключения БД!!!";
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
 
         private void ReadakInf_Click(object sender, RoutedEventArgs e)
         {
+            Regex regex1 = new Regex(@"\w", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             Error.Text = "";
             string sql;
             string phone_ =  Phone.Text ;

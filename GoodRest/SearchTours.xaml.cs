@@ -43,7 +43,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-               //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подклюючения БД");
             }
         }
 

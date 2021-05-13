@@ -39,7 +39,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
         static DataTable ExecuteSql(string sql)

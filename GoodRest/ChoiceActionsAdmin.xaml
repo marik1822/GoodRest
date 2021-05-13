@@ -86,7 +86,7 @@
                 </Style>
             </Image.Style>
         </Image>
-        <Button Style="{DynamicResource RoundCorner}"   Content="Добавить данные"  HorizontalAlignment="Left" Margin="195,64,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand"  >
+        <Button Style="{DynamicResource RoundCorner}"   Content="Добавить данные"  HorizontalAlignment="Left" Margin="195,64,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand" Click="Button_Click"  >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>
@@ -98,7 +98,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Style="{DynamicResource RoundCorner}"   Content="Просмотр туров"  HorizontalAlignment="Left" Margin="195,169,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand"  >
+        <Button Style="{DynamicResource RoundCorner}"   Content="Просмотр туров"  HorizontalAlignment="Left" Margin="195,169,0,0" VerticalAlignment="Top" Width="361" FontFamily="Mongolian Baiti" FontSize="16" Foreground="#FFFDF9F9" Height="58" Cursor="Hand" Click="Button_Click_1"  >
             <Button.Effect>
                 <DropShadowEffect Color="Black" Direction="310" ShadowDepth="8" Opacity="0.4"/>
             </Button.Effect>

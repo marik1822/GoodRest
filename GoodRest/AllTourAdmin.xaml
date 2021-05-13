@@ -1,0 +1,36 @@
+﻿<Page x:Class="GoodRest.AllTourAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoodRest"
+      mc:Ignorable="d" 
+      d:DesignHeight="861" d:DesignWidth="1807"
+      Title="AllTourAdmin" Loaded="Page_Loaded" Background="#7FFBFBFB">
+
+    <Grid>
+        <DataGrid AutoGenerateColumns="False"  Name="AllTour" HorizontalAlignment="Left" Height="783" VerticalAlignment="Top" Width="1807">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код тура" Binding="{Binding Id_Tour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Код курорта" Binding="{Binding Id_Resort}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Код отеля" Binding="{Binding Id_Hotel}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество взрослых" Binding="{Binding Number_Of_Adults}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество детей" Binding="{Binding Number_Of_Children}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Начало тура" Binding="{Binding Date_Start_Tour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество ночей" Binding="{Binding  Number_Of_Nights}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость за человека" Binding="{Binding Cost_Adult}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата окончания тура" Binding="{Binding Date_End_Tour}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество путёвок" Binding="{Binding Number_Of_Trips}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город вылета" Binding="{Binding Departure_City}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название тура" Binding="{Binding Name_Tour}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="1433,803,0,0" VerticalAlignment="Top" Width="309" Height="48" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C"  Cursor="Hand" FontSize="24" Click="Save_Click"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="1085,803,0,0" VerticalAlignment="Top" Width="309" Height="48" BorderBrush="{x:Null}" Background="#B2DDDDDD" Foreground="#FF294F4C"  Cursor="Hand" FontSize="24" Click="Delete_Click" />
+
+    </Grid>
+</Page>
+
+    
+    
