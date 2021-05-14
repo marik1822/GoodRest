@@ -64,7 +64,6 @@ namespace GoodRest
                 ApplicationsTravelAgent.Sale =float.Parse(Sale.Text.Trim());
                 if (ApplicationsTravelAgent.Sale < (ApplicationsTravelAgent.Col_People * ApplicationsTravelAgent.Cost))
                 {
-                    // int finall_cost = (ApplicationsTravelAgent.Col_People * ApplicationsTravelAgent.Cost) - ApplicationsTravelAgent.Sale;
                     string finall_cost = ((ApplicationsTravelAgent.Col_People * ApplicationsTravelAgent.Cost) - ApplicationsTravelAgent.Sale).ToString();
                     string id_contract = null;
                     string sql;

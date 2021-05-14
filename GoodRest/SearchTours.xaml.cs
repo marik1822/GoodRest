@@ -80,13 +80,11 @@ namespace GoodRest
             Cursor = Cursors.Wait;
             country = Country.SelectedItem.ToString();
              string  colP = Col.SelectedItem.ToString();
-            //Error.Text = colP;
              col_pyt = int.Parse(colP);
              day = Date.Text;
             string sql2;
             SqlConnection connection = null;
             sql2 = "EXEC SearchTour @col="+col_pyt+",@city='"+country+"',@cityV='"+Tours.cityV+"',@date='"+day+"';";
-           // sql2 = "EXECUTE SearchTour @col="+ col_pyt + ",@city='"+ country + "',@cityV='"+Tours.cityV+"',@date='"+ day + "';";
             connection = new SqlConnection(connectionString);
             Tour = new DataTable();
             connection = new SqlConnection(connectionString);
@@ -95,7 +93,6 @@ namespace GoodRest
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-               // CountryTours.id_t = reader[5].ToString();
                 this.NavigationService.Navigate(new SearchOutputTour());
                 return;
             }
@@ -107,12 +104,10 @@ namespace GoodRest
 
         private void Page_KeyUp(object sender, KeyEventArgs e)
         {
-          //  Cursor = Cursors.Wait;
         }
 
         private void Serch_KeyUp(object sender, KeyEventArgs e)
         {
-          //  Cursor = Cursors.Wait;
         }
     }
 }

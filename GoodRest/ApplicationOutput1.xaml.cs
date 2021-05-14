@@ -42,7 +42,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //Error.Text = "Ошибка подключения БД!!!";
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
 
@@ -60,7 +60,6 @@ namespace GoodRest
             KolPyt.Text = SearchApplications.Number_Of_Trips;
             Status.Text = SearchApplications.Status;
             SqlConnection connection = null;
-            //NameTur.Text = SearchApplications.id_Tour;
             sql= "SELECT dbo.Tour.Name_Tour, dbo.Client.Surname, dbo.Client.Name_, dbo.Client.Middle_name, dbo.Application.Id_Tour FROM dbo.Tour INNER JOIN dbo.Application ON dbo.Tour.Id_Tour = dbo.Application.Id_Tour INNER JOIN dbo.Client ON dbo.Application.Id_Client = dbo.Client.Id_Client WHERE (dbo.Application.Id_Tour = '"+SearchApplications.id_Tour+ "')AND (dbo.Application.Id_Application = '"+SearchApplications.id_Aplic+"');";
             connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(sql, connection);
@@ -79,12 +78,6 @@ namespace GoodRest
             }
             reader.Close();
             connection.Close();
-           /* Id.Text =SearchApplications.id_Aplic;
-            Date.Text =SearchApplications.Date_ap;
-            KolPyt.Text = SearchApplications.Number_Of_Trips;
-            Status.Text = SearchApplications.Status;
-            FIO.Text = fio;
-            NameTur.Text = Name_Tour;*/
         }
     }
 }

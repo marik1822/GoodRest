@@ -27,7 +27,6 @@ namespace GoodRest
        static string connectionString;
         SqlDataAdapter adapter;
         static DataTable Tour;
-      //  public static string id_t { get; set; }
         public TourInfo()
         {
             InitializeComponent();
@@ -40,12 +39,11 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
         static DataTable ExecuteSql(string sql)
         {
-            //string sql;
             Tour = new DataTable();
             SqlConnection connection = null;
 
@@ -65,7 +63,6 @@ namespace GoodRest
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //string photo;
             string sql;
 
             SqlConnection connection = null;

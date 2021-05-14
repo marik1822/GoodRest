@@ -48,8 +48,6 @@ namespace GoodRest
             SqlConnection connection = null;
 
             connection = new SqlConnection(connectionString);
-            //string table = "brands";
-            //string sql = "SELECT * FROM " + table;
             adapter = new SqlDataAdapter(sql, connection);
             connection.Open();
             SqlCommandBuilder myCommandBuilder = new SqlCommandBuilder(adapter as SqlDataAdapter);

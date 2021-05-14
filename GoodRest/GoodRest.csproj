@@ -196,9 +196,6 @@
     <Compile Include="GreetingPage.xaml.cs">
       <DependentUpon>GreetingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Greeting_GoodRest.xaml.cs">
-      <DependentUpon>Greeting_GoodRest.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="PhotoHotelAdd.xaml.cs">
       <DependentUpon>PhotoHotelAdd.xaml</DependentUpon>
@@ -334,10 +331,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Greeting_GoodRest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -426,9 +419,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="фон2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="рамка для регестрации.png" />
   </ItemGroup>
   <ItemGroup>
@@ -438,22 +428,11 @@
     <Resource Include="логин1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PNGКорзина.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Пароль.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="фон меню2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="фон меню.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="фон без блюра.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="Photo\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
@@ -461,9 +440,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="назад.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="назад человек.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="выключение.png" />
@@ -508,21 +484,14 @@
     <Resource Include="ОНас2.PNG" />
     <Resource Include="ОНас1.PNG" />
     <Resource Include="Фон_Кнопки.png" />
-    <Resource Include="Шарм-эль-шейх Надпись.jpg" />
-    <Resource Include="ХургадаНадпись.jpg" />
     <Resource Include="карта2.PNG" />
     <Resource Include="карта.PNG" />
-    <Resource Include="сотни довольных туристов.png" />
     <Resource Include="поиск.png" />
     <Resource Include="icons8-отследить-отправление-через-мобильный-24.png" />
     <Resource Include="NOphoto.png" />
     <Resource Include="Button_Upload-01_25119.png" />
-    <Content Include="Palm - 44399.mp4" />
-    <Resource Include="search_internet_16725.png" />
-    <Resource Include="poiskiturov.jpg" />
     <Content Include="Waves - 61950.mp4" />
     <Content Include="Звуки природы Star — Музыкотерапия.mp3" />
-    <Resource Include="курорт1.jpg" />
     <Resource Include="назад стрелка.png" />
     <Resource Include="фон для туров.png" />
   </ItemGroup>

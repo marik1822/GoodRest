@@ -41,7 +41,6 @@ namespace GoodRest
 
 
         private Page Registration;
-        private Greeting_GoodRest _greeting_GoodRest;
 
         private Page _currentPage;
         public Page CurrentPage { get { return _currentPage; } set { _currentPage = value;   }  }
@@ -67,7 +66,6 @@ namespace GoodRest
         public MainWindow()
         {
             InitializeComponent();
-           // MainFrame.Content = new Greeting_GoodRest();
             FrameOpacity = 1;
             CurrentPage = null;
 
@@ -76,11 +74,11 @@ namespace GoodRest
             try
             {
                 connection.Open();
-                //Error.Text = "подключено БД";
+                
             }
             catch (SqlException) 
             {
-                Error.Text = "Ошибка подключения БД!!!";
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
 
@@ -117,14 +115,10 @@ namespace GoodRest
             else
                 if (NoRobot.IsChecked == true)
             {
-                //string role;
                sql = "SELECT Id_Client, Series,Number_passport,Surname,Name_,Middle_name,Phone_number,Gender,Role,convert(varchar,Date_of_birth,106) from Client where (Login='"+login_+"')and(Password='"+password_+"');";
                sql2 = "SELECT login,password, Role,Id_Employee from Employee where ((Login='" + login_ + "') and (Password='" + password_ + "'))";
-               // sql = "SELECT login,password, Role from Client where ((Login='marik') and (Password='marik'))";
                 connection = new SqlConnection(connectionString);
                 SqlCommand command = new SqlCommand(sql, connection);
-                //command.Parameters.AddWithValue("@login",log);
-                //command.Parameters.AddWithValue("@password",pass);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -144,12 +138,9 @@ namespace GoodRest
 
                     new Greeting().Show();
                     this.Close();
-                   // Error.Text = role_;
                     return;
                 }
                 reader.Close();
-                //connection.Close();
-                //connection= new SqlConnection(connectionString);
                 SqlCommand command2 = new SqlCommand(sql2, connection);
                 SqlDataReader reader2 = command2.ExecuteReader();
                 while (reader2.Read())
@@ -158,7 +149,6 @@ namespace GoodRest
                     id_emp =reader2[3].ToString();
                     new Greeting().Show();
                     this.Close();
-                    //Error.Text = role_;
                     return;
                 }
                 reader2.Close();
@@ -169,12 +159,9 @@ namespace GoodRest
                 NoRobot.IsChecked = false;
                 
                 connection.Close();
-
-                // new Greeting().Show();
             }
             else
                 Error.Text = "Поставьте галочку в поле я не робот";
-            //Helper.CloseWindow(Window.GetWindow(this));
         }
         
 

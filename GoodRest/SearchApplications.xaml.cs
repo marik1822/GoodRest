@@ -42,7 +42,6 @@ namespace GoodRest
             try
             {
                 connection.Open();
-                //Error.Text = "подключено БД";
             }
             catch (SqlException)
             {
@@ -72,7 +71,6 @@ namespace GoodRest
 
                 if (NumberApplications.Text != "")
             {
-                //string role;
                 sql = "Select Id_Application,Id_Tour,Id_Client,Number_Of_Trips,_Status,convert(varchar,Submission_Date,106) from Application where Id_Application='"+id_Aplic+"';";
                 connection = new SqlConnection(connectionString);
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -93,16 +91,12 @@ namespace GoodRest
                         Search1.IsEnabled = false;
                         NumberApplications.IsEnabled = false;
                     }
-                    // Error.Text = role_;
                     return;
                 }
                 reader.Close();
                 connection.Close();
                 Error.Text = "Заявка не найдена";
                 NumberApplications.Text = "";
-                //FrameSearch1.Content = new ApplicationOutput1();
-                // Search1.IsEnabled = false;
-                //NumberApplications.IsEnabled = false;
             }
         }
     }

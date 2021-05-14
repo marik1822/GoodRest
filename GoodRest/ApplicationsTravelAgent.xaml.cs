@@ -49,7 +49,6 @@ namespace GoodRest
         }
         static DataTable ExecuteSql(string sql)
         {
-            //string sql;
             Tour = new DataTable();
             SqlConnection connection = null;
 
@@ -126,11 +125,8 @@ namespace GoodRest
                 
                 Date = DateTime.Now.ToString();
                 Date = Date.Substring(0, Date.LastIndexOf(' ') + 1);
-                //Error.Text = Date;
                 Aplic.Content = new ContractOFORM();
-               // Error.Text = Sale;
-          
-                
+               
             }
          
         }

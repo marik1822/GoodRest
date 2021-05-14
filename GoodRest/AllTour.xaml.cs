@@ -38,7 +38,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //Ошибка подключения БД!!
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
         static DataTable ExecuteSql(string sql)
@@ -64,13 +64,13 @@ namespace GoodRest
         {
             if (Tours.cityV == "Москва")
             {
-                //хранимая процедура
+               
                 DataTable Tour = ExecuteSql("SELECT * from AllTourMoscow;");
                 LViewTours.ItemsSource = Tour.DefaultView;
             } else
                 if (Tours.cityV == "Санкт-Петербург")
             {
-               //хранимая процедура
+               
             DataTable Tour = ExecuteSql("SELECT * from AllTourPiter;");
             LViewTours.ItemsSource = Tour.DefaultView;
             }

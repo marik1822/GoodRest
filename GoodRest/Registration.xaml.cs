@@ -39,7 +39,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                Error.Text = "Ошибка подключения БД!!!";
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
 
@@ -122,7 +122,6 @@ namespace GoodRest
                     MainWindow.password_ = Password.Text.Trim();
                     sql2 = "Select * from Client where Email='" + MainWindow.email + "';";
                     sql = "Select * from Client where Login='" + MainWindow.login_ + "';";
-                    //sql4 = "INSERT INTO Client(Id_Client,Email,Login,Password) VALUES ('"+idClient+"','"+MainWindow.email+"','"+MainWindow.login_+"','"+MainWindow.password_+"');";
                     connection = new SqlConnection(connectionString);
                     connection.Open();
                     bool id = true;
@@ -140,8 +139,7 @@ namespace GoodRest
                         id = false;
                         reader3.Close();
                     }
-                    //connection = new SqlConnection(connectionString);
-                    sql4 = "INSERT INTO Client(Id_Client,Email,Login,Password,Role) VALUES ('" + idClient + "','" + MainWindow.email + "','" + MainWindow.login_ + "','" + MainWindow.password_ + "',1);";
+                    sql4 = "EXECUTE Registrarion @id='"+ idClient + "',@email='"+ MainWindow.email + "',@login='"+ MainWindow.login_ + "',@password='"+ MainWindow.password_ + "';";
                     SqlCommand command = new SqlCommand(sql, connection);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -159,7 +157,6 @@ namespace GoodRest
                         return;
                     }
                     reader2.Close();
-                    // connection.Close();
                     Successful.Content = new SuccessfulRegistration();
                     if ((Successful.Content = new SuccessfulRegistration()) != null)
                     {

@@ -43,7 +43,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
 
@@ -88,7 +88,6 @@ namespace GoodRest
                     id = false;
                     reader3.Close();
                 }
-                //CountryTours.id_t;
                  col_ch = ChildCol.SelectedItem.ToString();
                  col_p = PeopleCol.SelectedItem.ToString();
                 int col_ch1 = int.Parse(col_ch);

@@ -22,15 +22,10 @@ namespace GoodRest
     /// </summary>
     public partial class ChoiceActionsClients : Page
     {
-       
-        private bool _clickOrNo;
-       // public bool clickOrNo { get { return _clickOrNo; } set { _clickOrNo = value; } }
 
         public ChoiceActionsClients()
         {
             InitializeComponent();
-            //this.Opacity = 1;
-            //clickOrNo = false;
 
         }
 

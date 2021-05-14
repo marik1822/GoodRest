@@ -44,7 +44,6 @@ namespace GoodRest
         }
         static DataTable ExecuteSql(string sql)
         {
-            //string sql;
             Contracts = new DataTable();
             SqlConnection connection = null;
 
@@ -104,7 +103,6 @@ namespace GoodRest
             string Price = Contracts.Rows[App.SelectedIndex]["Cost_Adult"].ToString().Trim();
             string Sale = Contracts.Rows[App.SelectedIndex]["Discount"].ToString().Trim();
             string Cost = Contracts.Rows[App.SelectedIndex]["Final_Price"].ToString().Trim();
-            //Error.Text = CityV;
             var helper = new WordHelper("ContractProb.docx");
             var items = new Dictionary<string, string>
             {

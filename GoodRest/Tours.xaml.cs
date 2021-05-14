@@ -26,7 +26,6 @@ namespace GoodRest
         /// </summary>
         public static string Country { get; set; }
         public static string cityV { get; set; }
-        //public string login1_;
         public Tours()
         {
             InitializeComponent();

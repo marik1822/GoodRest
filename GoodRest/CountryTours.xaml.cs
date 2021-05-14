@@ -40,12 +40,11 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подключения БД");
             }
         }
         static DataTable ExecuteSql(string sql)
         {
-            //string sql;
             Tour = new DataTable();
             SqlConnection connection = null;
 
@@ -135,10 +134,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -160,10 +157,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -185,10 +180,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -209,10 +202,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -235,10 +226,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -259,10 +248,8 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
@@ -283,16 +270,13 @@ namespace GoodRest
                 {
                     id_t = reader[5].ToString();
                     this.NavigationService.Navigate(new TourInfo());
-                    //this.NavigationService.Navigate(new SearchOutputTour());
                     return;
                 }
-                //Error.Text = "По вашему запросу ничего не найдено";
 
                 reader.Close();
                 connection.Close();
 
             }
-         //   this.NavigationService.Navigate(new TourInfo());
 
         }
     }

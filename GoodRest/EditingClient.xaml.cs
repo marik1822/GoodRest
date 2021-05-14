@@ -30,7 +30,6 @@ namespace GoodRest
         public EditingClient()
         {
             InitializeComponent();
-            //Phone.PreviewTextInput += new TextCompositionEventHandler(Phone_TextInput);
             Seria.PreviewTextInput += new TextCompositionEventHandler(Seria_TextInput);
             Number.PreviewTextInput += new TextCompositionEventHandler(Number_TextInput);
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -38,7 +37,6 @@ namespace GoodRest
             try
             {
                 connection.Open();
-                //Error.Text = "подключено БД";
             }
             catch (SqlException)
             {
@@ -102,8 +100,6 @@ namespace GoodRest
             } else
                 if ((phone_[0] == '+') && (Surname.Text.Trim() != "") && (Name.Text.Trim() != "") && (MiddleName.Text.Trim() != "") && (Phone.Text.Trim() != "") && (Seria.Text.Trim() != "") && (Number.Text.Trim() != "") && (Date.Text.Trim() != "") && ((M.IsChecked == true) || (F.IsChecked==true))) 
             {
-                // string phone_plus = "+" + Phone.Text.Trim();
-                // string sql;
                 Client = new DataTable();
                 SqlConnection connection = null;
                 sql = "UPDATE Client SET Series='" + Seria.Text.Trim() + "',Number_passport='" + Number.Text.Trim() + "',Surname='" + Surname.Text.Trim() + "',Name_='" + Name.Text.Trim() + "',Middle_name='" + MiddleName.Text.Trim() + "',Date_of_birth='" + Date.Text.Trim() + "',Phone_number='" + Phone.Text.Trim() + "',Gender='" + MainWindow.sex + "' WHERE Id_Client='" + MainWindow.id_client.Trim() + "';";

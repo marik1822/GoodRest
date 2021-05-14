@@ -38,7 +38,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-               // Error.Text = "Ошибка подключения БД!!!";
+                MessageBox.Show("Ошибка подключения БД");
             }
 
         }
@@ -71,7 +71,6 @@ namespace GoodRest
                 Number.Text = reader[5].ToString();
                 Sex.Text = reader[6].ToString();
                 DayOfB.Text = reader[7].ToString();
-                // Error.Text = role_;
                 return;
             }
             reader.Close();

@@ -41,7 +41,7 @@ namespace GoodRest
             }
             catch (SqlException)
             {
-                //"Ошибка подключения БД!!!
+                MessageBox.Show("Ошибка подключения БД");
             }
 
         }
@@ -52,7 +52,6 @@ namespace GoodRest
             if (Resorts_l.Items.Count == 0)
                 return;
 
-            //Resorts_l.IsEnabled = false;
             IsStartAnimation = true;
             SelectedIndex = Resorts_l.SelectedIndex+1;
             Int32Animation animation = new Int32Animation()
@@ -64,13 +63,11 @@ namespace GoodRest
                
             };
             Resorts_l.BeginAnimation(Selector.SelectedIndexProperty, animation);
-            //buttAnimation.Content = "Остановить анимацию";
 
         }
        
         static DataTable ExecuteSql(string sql)
         {
-            //string sql;
             Resort = new DataTable();
             SqlConnection connection = null;
 
@@ -92,7 +89,6 @@ namespace GoodRest
             string sql = "SELECT * from Resort;";
             DataTable Resort = ExecuteSql(sql);
            Resorts_l.ItemsSource = Resort.DefaultView;
-          //  StartAnimation();
         
         }
 

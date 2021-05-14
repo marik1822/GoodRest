@@ -14,10 +14,8 @@ namespace GoodRest
         public static void CloseWindow(Window x)
         {
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
-            //  int count = Application.Current.Windows;
             foreach (Window w in Application.Current.Windows)
             {
-                //Form f = Application.OpenForms[i];
                 if (w.GetType().Assembly == currentAssembly && w == x)
                 {
                     w.Close();
